@@ -12,6 +12,10 @@
 		6BBE3BA321E04D5700109E40 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3BA121E04D5700109E40 /* MainMenu.xib */; };
 		6BBE3BAF21E04D5700109E40 /* timeGOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3BAE21E04D5700109E40 /* timeGOTests.swift */; };
 		6BBE3BBA21E04D5700109E40 /* timeGOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3BB921E04D5700109E40 /* timeGOUITests.swift */; };
+		6BBE3BC921E0577700109E40 /* TimeGOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3BC721E0577700109E40 /* TimeGOViewController.swift */; };
+		6BBE3BCA21E0577700109E40 /* TimeGOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */; settings = {ASSET_TAGS = (timeSelector, ); }; };
+		6BBE3BD421E1221500109E40 /* alert-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3BD321E1221500109E40 /* alert-sound.caf */; };
+		6BBE3BD821E125A300109E40 /* PopoverMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		6BBE3BB521E04D5700109E40 /* timeGOUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timeGOUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBE3BB921E04D5700109E40 /* timeGOUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeGOUITests.swift; sourceTree = "<group>"; };
 		6BBE3BBB21E04D5700109E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BBE3BC721E0577700109E40 /* TimeGOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGOViewController.swift; sourceTree = "<group>"; };
+		6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGOViewController.xib; sourceTree = "<group>"; };
+		6BBE3BD321E1221500109E40 /* alert-sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alert-sound.caf"; sourceTree = "<group>"; };
+		6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +102,11 @@
 		6BBE3B9C21E04D5500109E40 /* timeGO */ = {
 			isa = PBXGroup;
 			children = (
+				6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */,
+				6BBE3BD321E1221500109E40 /* alert-sound.caf */,
 				6BBE3B9D21E04D5500109E40 /* AppDelegate.swift */,
+				6BBE3BC721E0577700109E40 /* TimeGOViewController.swift */,
+				6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */,
 				6BBE3B9F21E04D5700109E40 /* Assets.xcassets */,
 				6BBE3BA121E04D5700109E40 /* MainMenu.xib */,
 				6BBE3BA421E04D5700109E40 /* Info.plist */,
@@ -183,6 +195,9 @@
 		6BBE3B9221E04D5500109E40 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					timeSelector,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = 5km;
@@ -226,7 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BBE3BA021E04D5700109E40 /* Assets.xcassets in Resources */,
+				6BBE3BD421E1221500109E40 /* alert-sound.caf in Resources */,
 				6BBE3BA321E04D5700109E40 /* MainMenu.xib in Resources */,
+				6BBE3BCA21E0577700109E40 /* TimeGOViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BBE3B9E21E04D5500109E40 /* AppDelegate.swift in Sources */,
+				6BBE3BD821E125A300109E40 /* PopoverMonitor.swift in Sources */,
+				6BBE3BC921E0577700109E40 /* TimeGOViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,15 +437,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = timeGO/timeGO.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SS9NT29VA7;
 				INFOPLIST_FILE = timeGO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -436,15 +459,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = timeGO/timeGO.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = SS9NT29VA7;
 				INFOPLIST_FILE = timeGO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
