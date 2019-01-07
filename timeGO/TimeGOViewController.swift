@@ -15,16 +15,35 @@ class TimeGOViewController: NSViewController {
     
     @IBOutlet var firstView: NSView!
     @IBOutlet var secondView: NSView!
-
+    @IBOutlet var settingsPopover: NSPopover!
+    
+    @IBOutlet weak var tipLabel: NSTextField!
     @IBOutlet weak var timeSelector: NSPopUpButton!
     @IBOutlet weak var timeLabel: NSTextField!
     @IBOutlet weak var pauseButton: NSButton!
+    @IBOutlet weak var settingsButton: NSButton!
     
-    @IBAction func quitApp(_ sender: Any) {
-        if timer.isValid {
-            timer.invalidate()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do view setup here.
+        settingsPopover.delegate = self
+        timeArray = getTimeArray()
+        timeSelector.removeAllItems()
+        for timeItem in timeArray {
+            var timeValue = "\(timeItem["time", default: "0"]) 分钟"
+            let timeTip = timeItem["tip", default: "时间到了！"]
+            while timeSelector.itemTitles.contains(timeValue) {
+                timeValue.append("\'")
+            }
+            timeSelector.addItem(withTitle: timeValue)
+            timeSelector.item(withTitle: timeValue)?.toolTip = timeTip
         }
-        NSApplication.shared.terminate(self)
+        timeSelector.selectItem(at: 0)
+        popUpSelectionDidChange(timeSelector)
+    }
+    
+    @IBAction func popUpSelectionDidChange(_ sender: NSPopUpButton) {
+        tipLabel.stringValue = "通知内容: " + (timeSelector.selectedItem?.toolTip)!
     }
     
     @IBAction func startTimer(_ sender: Any) {
@@ -35,16 +54,8 @@ class TimeGOViewController: NSViewController {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCountHandler), userInfo: nil, repeats: true)
             pauseButton.title = "暂停"
         } else {
-            alertTimeZero()
+            tipInfo(withTitle: "提醒", withMessage: "定时时间不能选 0 分钟")
         }
-    }
-    
-    func alertTimeZero() {
-        let alert = NSAlert()
-        alert.messageText = "提醒"
-        alert.informativeText = "定时时间不能选 0 分钟"
-        alert.addButton(withTitle: "确定")
-        alert.runModal()
     }
     
     @IBAction func pauseTimer(_ sender: Any) {
@@ -55,7 +66,7 @@ class TimeGOViewController: NSViewController {
             if timeToCount > 0 {
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCountHandler), userInfo: nil, repeats: true)
             } else {
-                alertTimeZero()
+                tipInfo(withTitle: "提醒", withMessage: "定时时间不能选 0 分钟")
                 self.view = firstView
             }
             pauseButton.title = "暂停"
@@ -69,11 +80,6 @@ class TimeGOViewController: NSViewController {
         self.view = firstView
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-    }
-    
     @objc func timerCountHandler(_ sender: Any) {
         if timeToCount > 0 {
             timeToCount -= 1
@@ -84,13 +90,19 @@ class TimeGOViewController: NSViewController {
         stopTimer(self)
     }
     
+    @IBAction func toggleSettingsView(_ sender: AnyObject) {
+        if settingsPopover.isShown {
+            settingsPopover.performClose(sender)
+        } else {
+            settingsPopover.show(relativeTo: settingsButton.bounds, of: settingsButton, preferredEdge: NSRectEdge.minY)
+        }
+    }
+    
     func notificationFly() {
-        // 定义NSUserNotification
         let userNotification = NSUserNotification()
         userNotification.title = "timeGO"
         userNotification.subtitle = timeSelector.selectedItem?.title
-        userNotification.informativeText = "倒计时已结束!"
-        // 使用NSUserNotificationCenter发送NSUserNotification
+        userNotification.informativeText = (timeSelector.selectedItem?.toolTip)!
         let userNotificationCenter = NSUserNotificationCenter.default
         userNotificationCenter.delegate = self as? NSUserNotificationCenterDelegate
         userNotificationCenter.scheduleNotification(userNotification)
@@ -103,14 +115,27 @@ class TimeGOViewController: NSViewController {
     func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
         return true
     }
-    
-    /// 从字符串中提取数字
-    func getIntFromString(str: String) -> Int {
-        let scanner = Scanner(string: str)
-        scanner.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
-        var number :Int = 0
-        scanner.scanInt(&number)
-        return number
+}
+
+extension TimeGOViewController: NSPopoverDelegate {
+    func popoverDidClose(_ notification: Notification) {
+        if arrayChanged {
+            timeSelector.removeAllItems()
+            if timeArray.count > 0 {
+                for timeItem in timeArray {
+                    var timeValue = "\(timeItem["time", default: "0"]) 分钟"
+                    let timeTip = timeItem["tip", default: "时间到了！"]
+                    while timeSelector.itemTitles.contains(timeValue) {
+                        timeValue.append("\'")
+                    }
+                    timeSelector.addItem(withTitle: timeValue)
+                    timeSelector.item(withTitle: timeValue)?.toolTip = timeTip
+                }
+                timeSelector.selectItem(at: 0)
+                tipLabel.stringValue = "通知内容: " + timeArray[0]["tip"]!
+            }
+            UserDefaults.standard.set(timeArray, forKey: timeDataKey)
+            arrayChanged = false
+        }
     }
-    
 }

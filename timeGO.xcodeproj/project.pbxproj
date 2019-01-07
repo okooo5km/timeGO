@@ -16,6 +16,9 @@
 		6BBE3BCA21E0577700109E40 /* TimeGOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */; settings = {ASSET_TAGS = (timeSelector, ); }; };
 		6BBE3BD421E1221500109E40 /* alert-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3BD321E1221500109E40 /* alert-sound.caf */; };
 		6BBE3BD821E125A300109E40 /* PopoverMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */; };
+		6BEDDAF621E26C720097CE3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDDAF421E26C720097CE3D /* SettingsViewController.swift */; };
+		6BEDDAF721E26C720097CE3D /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BEDDAF521E26C720097CE3D /* SettingsViewController.xib */; };
+		6BEDDAFB21E309DA0097CE3D /* timeGoPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDDAFA21E309DA0097CE3D /* timeGoPublic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGOViewController.xib; sourceTree = "<group>"; };
 		6BBE3BD321E1221500109E40 /* alert-sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alert-sound.caf"; sourceTree = "<group>"; };
 		6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverMonitor.swift; sourceTree = "<group>"; };
+		6BEDDAF421E26C720097CE3D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6BEDDAF521E26C720097CE3D /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		6BEDDAFA21E309DA0097CE3D /* timeGoPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeGoPublic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +108,12 @@
 		6BBE3B9C21E04D5500109E40 /* timeGO */ = {
 			isa = PBXGroup;
 			children = (
+				6BEDDAFA21E309DA0097CE3D /* timeGoPublic.swift */,
 				6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */,
 				6BBE3BD321E1221500109E40 /* alert-sound.caf */,
 				6BBE3B9D21E04D5500109E40 /* AppDelegate.swift */,
+				6BEDDAF421E26C720097CE3D /* SettingsViewController.swift */,
+				6BEDDAF521E26C720097CE3D /* SettingsViewController.xib */,
 				6BBE3BC721E0577700109E40 /* TimeGOViewController.swift */,
 				6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */,
 				6BBE3B9F21E04D5700109E40 /* Assets.xcassets */,
@@ -244,6 +253,7 @@
 				6BBE3BD421E1221500109E40 /* alert-sound.caf in Resources */,
 				6BBE3BA321E04D5700109E40 /* MainMenu.xib in Resources */,
 				6BBE3BCA21E0577700109E40 /* TimeGOViewController.xib in Resources */,
+				6BEDDAF721E26C720097CE3D /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BEDDAFB21E309DA0097CE3D /* timeGoPublic.swift in Sources */,
 				6BBE3B9E21E04D5500109E40 /* AppDelegate.swift in Sources */,
 				6BBE3BD821E125A300109E40 /* PopoverMonitor.swift in Sources */,
 				6BBE3BC921E0577700109E40 /* TimeGOViewController.swift in Sources */,
+				6BEDDAF621E26C720097CE3D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

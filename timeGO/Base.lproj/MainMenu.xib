@@ -10,7 +10,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="timeGO" customModuleProvider="target">
             <connections>
                 <outlet property="popover" destination="d4E-D8-Anm" id="YZL-1j-i72"/>
@@ -18,7 +18,7 @@
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <viewController id="YRp-4W-HIn" userLabel="Popover View Controller" customClass="TimeGOViewController" customModule="timeGO" customModuleProvider="target"/>
-        <popover id="d4E-D8-Anm">
+        <popover behavior="t" id="d4E-D8-Anm">
             <connections>
                 <outlet property="contentViewController" destination="YRp-4W-HIn" id="cYP-md-8KA"/>
             </connections>

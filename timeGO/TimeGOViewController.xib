@@ -10,8 +10,11 @@
                 <outlet property="firstView" destination="Hz6-mo-xeY" id="v5W-A2-huO"/>
                 <outlet property="pauseButton" destination="pHj-mH-FzY" id="YOz-Qq-97f"/>
                 <outlet property="secondView" destination="On8-ld-gWr" id="whn-8l-Nvi"/>
+                <outlet property="settingsButton" destination="qDs-B3-iWS" id="s7z-kj-a4r"/>
+                <outlet property="settingsPopover" destination="S7p-QD-dhz" id="p92-Rm-b6Z"/>
                 <outlet property="timeLabel" destination="I5N-5w-ffh" id="Wj7-SF-lgl"/>
                 <outlet property="timeSelector" destination="bTh-8h-os4" id="vhi-1G-qoL"/>
+                <outlet property="tipLabel" destination="yyT-L0-qqw" id="Qrm-UP-p4i"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -22,42 +25,48 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDs-B3-iWS">
-                    <rect key="frame" x="331" y="79" width="9" height="21"/>
+                    <rect key="frame" x="320" y="80" width="16" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSStopProgressTemplate" imagePosition="overlaps" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="dax-ds-eOS">
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="settingsIcon" imagePosition="overlaps" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="dax-ds-eOS">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="quitApp:" target="-2" id="cnB-LO-Naq"/>
+                        <action selector="toggleSettingsView:" target="-2" id="nOX-d3-blu"/>
                     </connections>
                 </button>
                 <popUpButton fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTh-8h-os4">
-                    <rect key="frame" x="75" y="46" width="77" height="28"/>
+                    <rect key="frame" x="60" y="50" width="84" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="check" title="25 分钟" bezelStyle="regularSquare" imagePosition="left" lineBreakMode="truncatingTail" refusesFirstResponder="YES" inset="2" selectedItem="Xyl-Jp-pzi" id="P0a-or-nqt">
+                    <popUpButtonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" lineBreakMode="truncatingTail" refusesFirstResponder="YES" inset="2" id="P0a-or-nqt">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                        <menu key="menu" id="zft-cW-gn0">
-                            <items>
-                                <menuItem title="25 分钟" id="Xyl-Jp-pzi"/>
-                                <menuItem title="5 分钟" id="MO5-be-jqo"/>
-                                <menuItem title="1 分钟" id="8rh-Bu-MT2"/>
-                            </items>
-                        </menu>
+                        <font key="font" metaFont="systemLight" size="14"/>
+                        <menu key="menu" id="zft-cW-gn0"/>
                     </popUpButtonCell>
+                    <connections>
+                        <action selector="popUpSelectionDidChange:" target="-2" id="kfg-BN-gin"/>
+                    </connections>
                 </popUpButton>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ykd-NJ-LiO">
-                    <rect key="frame" x="230" y="48" width="46" height="24"/>
+                    <rect key="frame" x="238" y="58" width="46" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="开始" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="xwg-nu-hGZ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="systemLight" size="14"/>
                     </buttonCell>
                     <connections>
                         <action selector="startTimer:" target="-2" id="Oeu-5F-KFi"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyT-L0-qqw">
+                    <rect key="frame" x="18" y="29" width="324" height="17"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="提醒信息" id="PjB-uh-IiG">
+                        <font key="font" metaFont="systemLight" size="12"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <point key="canvasLocation" x="158" y="-127"/>
         </customView>
@@ -65,12 +74,21 @@
             <rect key="frame" x="0.0" y="0.0" width="360" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5N-5w-ffh">
+                    <rect key="frame" x="18" y="62" width="324" height="30"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" alignment="center" id="PeI-14-w7g">
+                        <font key="font" metaFont="system" size="28"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgY-yu-GXc">
                     <rect key="frame" x="224" y="30" width="46" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="停止" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="ARe-2C-c2I">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        <font key="font" size="14" name=".PingFangSC-Light"/>
                     </buttonCell>
                     <connections>
                         <action selector="stopTimer:" target="-2" id="MJb-n1-boZ"/>
@@ -81,37 +99,23 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="暂停" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="Ocg-1A-Otn">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" size="13" name=".PingFangSC-Regular"/>
+                        <font key="font" size="14" name=".PingFangSC-Light"/>
                     </buttonCell>
                     <connections>
                         <action selector="pauseTimer:" target="-2" id="TWS-by-0jT"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I5N-5w-ffh">
-                    <rect key="frame" x="18" y="62" width="324" height="24"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" alignment="center" id="PeI-14-w7g">
-                        <font key="font" metaFont="system" size="24"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iT3-32-JH5">
-                    <rect key="frame" x="331" y="79" width="9" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSStopProgressTemplate" imagePosition="overlaps" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="sly-os-LRq">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="quitApp:" target="-2" id="zOf-aN-K7v"/>
-                    </connections>
-                </button>
             </subviews>
             <point key="canvasLocation" x="619" y="-127"/>
         </customView>
+        <viewController id="bMa-fU-XZD" userLabel="Popover View Controller" customClass="SettingsViewController" customModule="timeGO" customModuleProvider="target"/>
+        <popover behavior="t" id="S7p-QD-dhz">
+            <connections>
+                <outlet property="contentViewController" destination="bMa-fU-XZD" id="6bt-s5-daH"/>
+            </connections>
+        </popover>
     </objects>
     <resources>
-        <image name="NSStopProgressTemplate" width="11" height="11"/>
+        <image name="settingsIcon" width="32" height="32"/>
     </resources>
 </document>
