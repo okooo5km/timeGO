@@ -7,6 +7,12 @@
 //
 import Cocoa
 
+protocol StatusItemUpdateDelegate {
+    func timerDidStart()
+    func timerDidStop()
+    func timerUpdate(percent: Double)
+}
+
 let timeDataKey = "timeDataKey"
 var timeArray = [[String: String]]()
 var arrayChanged = false

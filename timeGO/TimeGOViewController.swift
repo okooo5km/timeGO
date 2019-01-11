@@ -12,6 +12,9 @@ class TimeGOViewController: NSViewController {
     
     var timer: Timer!
     var timeToCount: Int = 0
+    var timeToEnd: Int = 0
+    
+    var delegate: StatusItemUpdateDelegate!
     
     @IBOutlet var firstView: NSView!
     @IBOutlet var secondView: NSView!
@@ -48,11 +51,15 @@ class TimeGOViewController: NSViewController {
     
     @IBAction func startTimer(_ sender: Any) {
         timeToCount = getIntFromString(str: timeSelector.selectedItem?.title ?? "0 分钟") * 60
+        timeToEnd = getIntFromString(str: timeSelector.selectedItem?.title ?? "0 分钟") * 60
         timeLabel.stringValue = "\(timeToCount / 60)'\(timeToCount % 60)\""
         if timeToCount > 0 {
             self.view = secondView
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCountHandler), userInfo: nil, repeats: true)
             pauseButton.title = "暂停"
+            if delegate != nil {
+                delegate.timerDidStart()
+            }
         } else {
             tipInfo(withTitle: "提醒", withMessage: "定时时间不能选 0 分钟")
         }
@@ -78,12 +85,19 @@ class TimeGOViewController: NSViewController {
             timer.invalidate()
         }
         self.view = firstView
+        if delegate != nil {
+            delegate.timerDidStop()
+        }
     }
     
     @objc func timerCountHandler(_ sender: Any) {
         if timeToCount > 0 {
             timeToCount -= 1
             timeLabel.stringValue = "\(timeToCount / 60)'\(timeToCount % 60)\""
+            if delegate != nil {
+                let percent = 1.0 - Double(timeToCount) / Double(timeToEnd)
+                delegate.timerUpdate(percent: percent)
+            }
             return
         }
         notificationFly()
