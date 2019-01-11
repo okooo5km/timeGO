@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var popover: NSPopover!
     var eventMonitor: EventMonitor?
     
-    let statusItem = NSStatusBar.system.statusItem(withLength: 22.0)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     let indicator = NSProgressIndicator()
 
     @objc func openPopoverView(_ sender: AnyObject) {
@@ -47,11 +47,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         indicator.isDisplayedWhenStopped = true
         indicator.controlSize = NSControl.ControlSize.small
         indicator.style = NSProgressIndicator.Style.spinning
-        indicator.frame = NSRect(x: 3, y: 3, width: 16, height: 16)
         
         if let button = statusItem.button {
             button.image = NSImage(named: "statusIcon")
             button.action = #selector(togglePopoverView)
+            indicator.frame = NSRect(x: (button.frame.width - 16) / 2,
+                                     y: (button.frame.height - 16) / 2,
+                                     width: 16,
+                                     height: 16)
         }
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
@@ -80,6 +83,7 @@ extension AppDelegate: StatusItemUpdateDelegate {
     func timerDidStart() {
         if let button = statusItem.button {
             button.image = nil
+            indicator.doubleValue = 0.0
             button.addSubview(indicator)
         }
     }
