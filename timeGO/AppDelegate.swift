@@ -42,11 +42,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         indicator.minValue = 0.0
         indicator.maxValue = 1.0
         indicator.doubleValue = 0.0
-        indicator.autoresizesSubviews = true
         indicator.isIndeterminate = false
-        indicator.isDisplayedWhenStopped = true
         indicator.controlSize = NSControl.ControlSize.small
         indicator.style = NSProgressIndicator.Style.spinning
+        indicator.isHidden = true
         
         if let button = statusItem.button {
             button.image = NSImage(named: "statusIcon")
@@ -55,6 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                      y: (button.frame.height - 16) / 2,
                                      width: 16,
                                      height: 16)
+            button.addSubview(indicator)
         }
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
@@ -76,7 +76,7 @@ extension AppDelegate: StatusItemUpdateDelegate {
     func timerDidStop() {
         if let button = statusItem.button {
             button.image = NSImage(named: "statusIcon")
-            indicator.removeFromSuperview()
+            indicator.isHidden = true
         }
     }
     
@@ -84,7 +84,7 @@ extension AppDelegate: StatusItemUpdateDelegate {
         if let button = statusItem.button {
             button.image = nil
             indicator.doubleValue = 0.0
-            button.addSubview(indicator)
+            indicator.isHidden = false
         }
     }
     
