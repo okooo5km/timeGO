@@ -35,7 +35,7 @@ class SettingsViewController: NSViewController {
     }
     
     @IBAction func aboutApp(_ sender: Any) {
-        tipInfo(withTitle: "关于", withMessage: "\(getAppInfo()) 是一款简单的计时提醒软件，您可以通过不同计时器组合得到番茄时钟！\n\n因你看见，所以存在！感谢您的支持！")
+        tipInfo(withTitle: "关于", withMessage: "\(getAppInfo()) 是一款简单的计时提醒软件，您可以通过不同计时器组合得到番茄时钟！\n\n因你看见，所以存在！感谢您的支持！\n\nhttps://www.smslit.top/2019/01/08/timeGO/")
     }
     
     @IBAction func feedbackApp(_ sender: Any) {
