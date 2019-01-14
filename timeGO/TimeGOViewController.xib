@@ -67,6 +67,17 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-1h-GxE">
+                    <rect key="frame" x="20" y="80" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="quitIcon" imagePosition="overlaps" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="PyE-Do-1HK">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="quitApp:" target="-2" id="FF0-It-P9i"/>
+                    </connections>
+                </button>
             </subviews>
             <point key="canvasLocation" x="158" y="-127"/>
         </customView>
@@ -116,6 +127,7 @@
         </popover>
     </objects>
     <resources>
+        <image name="quitIcon" width="32" height="32"/>
         <image name="settingsIcon" width="32" height="32"/>
     </resources>
 </document>

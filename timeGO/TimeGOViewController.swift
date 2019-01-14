@@ -112,6 +112,13 @@ class TimeGOViewController: NSViewController {
         }
     }
     
+    @IBAction func quitApp(_ sender: Any) {
+        if arrayChanged {
+            UserDefaults.standard.set(timeArray, forKey: timeDataKey)
+        }
+        NSApplication.shared.terminate(true)
+    }
+    
     func notificationFly() {
         let userNotification = NSUserNotification()
         userNotification.title = "timeGO"
