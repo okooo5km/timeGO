@@ -14,7 +14,6 @@
                 <outlet property="settingsPopover" destination="S7p-QD-dhz" id="p92-Rm-b6Z"/>
                 <outlet property="timeLabel" destination="I5N-5w-ffh" id="Wj7-SF-lgl"/>
                 <outlet property="timeSelector" destination="bTh-8h-os4" id="vhi-1G-qoL"/>
-                <outlet property="tipLabel" destination="yyT-L0-qqw" id="Qrm-UP-p4i"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -35,8 +34,19 @@
                         <action selector="toggleSettingsView:" target="-2" id="nOX-d3-blu"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-1h-GxE">
+                    <rect key="frame" x="20" y="80" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="quitIcon" imagePosition="overlaps" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="PyE-Do-1HK">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="quitApp:" target="-2" id="FF0-It-P9i"/>
+                    </connections>
+                </button>
                 <popUpButton fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTh-8h-os4">
-                    <rect key="frame" x="60" y="50" width="84" height="40"/>
+                    <rect key="frame" x="57" y="29" width="184" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" lineBreakMode="truncatingTail" refusesFirstResponder="YES" inset="2" id="P0a-or-nqt">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -48,7 +58,7 @@
                     </connections>
                 </popUpButton>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ykd-NJ-LiO">
-                    <rect key="frame" x="238" y="58" width="46" height="24"/>
+                    <rect key="frame" x="255" y="37" width="46" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="开始" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="xwg-nu-hGZ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -56,26 +66,6 @@
                     </buttonCell>
                     <connections>
                         <action selector="startTimer:" target="-2" id="Oeu-5F-KFi"/>
-                    </connections>
-                </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyT-L0-qqw">
-                    <rect key="frame" x="18" y="29" width="324" height="17"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="提醒信息" id="PjB-uh-IiG">
-                        <font key="font" metaFont="systemLight" size="12"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-1h-GxE">
-                    <rect key="frame" x="20" y="80" width="16" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="quitIcon" imagePosition="overlaps" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="PyE-Do-1HK">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="quitApp:" target="-2" id="FF0-It-P9i"/>
                     </connections>
                 </button>
             </subviews>

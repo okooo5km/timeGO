@@ -20,7 +20,6 @@ class TimeGOViewController: NSViewController {
     @IBOutlet var secondView: NSView!
     @IBOutlet var settingsPopover: NSPopover!
     
-    @IBOutlet weak var tipLabel: NSTextField!
     @IBOutlet weak var timeSelector: NSPopUpButton!
     @IBOutlet weak var timeLabel: NSTextField!
     @IBOutlet weak var pauseButton: NSButton!
@@ -31,27 +30,32 @@ class TimeGOViewController: NSViewController {
         // Do view setup here.
         settingsPopover.delegate = self
         timeArray = getTimeArray()
-        timeSelector.removeAllItems()
-        for timeItem in timeArray {
-            var timeValue = "\(timeItem["time", default: "0"]) 分钟"
-            let timeTip = timeItem["tip", default: "时间到了！"]
-            while timeSelector.itemTitles.contains(timeValue) {
-                timeValue.append("\'")
-            }
-            timeSelector.addItem(withTitle: timeValue)
-            timeSelector.item(withTitle: timeValue)?.toolTip = timeTip
-        }
-        timeSelector.selectItem(at: 0)
-        popUpSelectionDidChange(timeSelector)
+        updateTimeSelectorFrom(timeArray: timeArray)
     }
     
-    @IBAction func popUpSelectionDidChange(_ sender: NSPopUpButton) {
-        tipLabel.stringValue = "通知内容: " + (timeSelector.selectedItem?.toolTip)!
+    func updateTimeSelectorFrom(timeArray: [[String: String]]) {
+        timeSelector.removeAllItems()
+        if timeArray.count <= 0 {
+            return
+        }
+        for timeItem in timeArray {
+            let timeTag = timeItem["tag", default:""]
+            let timeValue = "\(timeItem["time", default: "0"]) 分钟"
+            let timeTip = timeItem["tip", default: "时间到了！"]
+            var itemTitle = (timeTag == "") ? timeValue : "\(timeTag)(\(timeValue))"
+            while timeSelector.itemTitles.contains(itemTitle) {
+                itemTitle.append("\'")
+            }
+            timeSelector.addItem(withTitle: itemTitle)
+            timeSelector.item(withTitle: itemTitle)?.toolTip = timeTip
+        }
+        timeSelector.selectItem(at: 0)
     }
     
     @IBAction func startTimer(_ sender: Any) {
-        timeToCount = getIntFromString(str: timeSelector.selectedItem?.title ?? "0 分钟") * 60
-        timeToEnd = getIntFromString(str: timeSelector.selectedItem?.title ?? "0 分钟") * 60
+        let timeValue = timeArray[timeSelector.indexOfSelectedItem]["time", default: "0"]
+        timeToCount = getIntFromString(str: timeValue) * 60
+        timeToEnd = timeToCount
         timeLabel.stringValue = "\(timeToCount / 60)'\(timeToCount % 60)\""
         if timeToCount > 0 {
             self.view = secondView
@@ -141,20 +145,7 @@ class TimeGOViewController: NSViewController {
 extension TimeGOViewController: NSPopoverDelegate {
     func popoverDidClose(_ notification: Notification) {
         if arrayChanged {
-            timeSelector.removeAllItems()
-            if timeArray.count > 0 {
-                for timeItem in timeArray {
-                    var timeValue = "\(timeItem["time", default: "0"]) 分钟"
-                    let timeTip = timeItem["tip", default: "时间到了！"]
-                    while timeSelector.itemTitles.contains(timeValue) {
-                        timeValue.append("\'")
-                    }
-                    timeSelector.addItem(withTitle: timeValue)
-                    timeSelector.item(withTitle: timeValue)?.toolTip = timeTip
-                }
-                timeSelector.selectItem(at: 0)
-                tipLabel.stringValue = "通知内容: " + timeArray[0]["tip"]!
-            }
+            updateTimeSelectorFrom(timeArray: timeArray)
             UserDefaults.standard.set(timeArray, forKey: timeDataKey)
             arrayChanged = false
         }

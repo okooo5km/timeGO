@@ -57,7 +57,7 @@ class SettingsViewController: NSViewController {
     }
 
     @IBAction func addTimeTableRow(_ sender: Any) {
-        timeArray.append(["time": "25", "tip": "请修改此处为您想要的通知消息！"])
+        timeArray.append(["time": "25", "tip": "请修改此处为您想要的通知消息！", "tag": "25分钟"])
         timeTableView.reloadData()
         arrayChanged = true
     }
@@ -74,11 +74,13 @@ extension SettingsViewController: NSTableViewDelegate {
     fileprivate enum CellIdentifier {
         static let timeID = NSUserInterfaceItemIdentifier(rawValue: "timeCellID")
         static let tipID = NSUserInterfaceItemIdentifier(rawValue: "tipCellID")
+        static let tagID = NSUserInterfaceItemIdentifier(rawValue: "tagCellID")
     }
     
     fileprivate enum TextFieldPlaceHolder {
         static let time = "time"
         static let tip = "tip"
+        static let tag = "tag"
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -94,6 +96,9 @@ extension SettingsViewController: NSTableViewDelegate {
         case CellIdentifier.tipID:
             text = item["tip"]!
             cellView.placeholderString = TextFieldPlaceHolder.tip
+        case CellIdentifier.tagID:
+            text = item["tag", default: ""]
+            cellView.placeholderString = TextFieldPlaceHolder.tag
         default:
             return nil
         }
@@ -127,5 +132,6 @@ extension SettingsViewController: NSTextFieldDelegate {
             timeArray[index][key] = textField.stringValue
             arrayChanged = true
         }
+        print(timeArray)
     }
 }

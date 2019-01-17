@@ -51,6 +51,7 @@ func getTimeArray() -> [Dictionary<String, String>] {
             UserDefaults.standard.set(timeArray, forKey: timeDataKey)
         } else {
             timeArray = UserDefaults.standard.array(forKey: timeDataKey) as! [Dictionary<String, String>]
+            
         }
     }
     return timeArray
