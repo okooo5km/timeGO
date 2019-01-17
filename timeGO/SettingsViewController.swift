@@ -57,7 +57,7 @@ class SettingsViewController: NSViewController {
     }
 
     @IBAction func addTimeTableRow(_ sender: Any) {
-        timeArray.append(["time": "25", "tip": "请修改此处为您想要的通知消息！", "tag": "25分钟"])
+        timeArray.append(["time": "25", "tip": "请修改此处为您想要的通知消息！", "tag": ""])
         timeTableView.reloadData()
         arrayChanged = true
     }
