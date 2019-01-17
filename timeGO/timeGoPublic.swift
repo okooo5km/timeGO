@@ -28,15 +28,6 @@ func getAppInfo() -> String {
     return appNameStr + " v" + versionStr
 }
 
-/// 从字符串中提取数字
-func getIntFromString(str: String) -> Int {
-    let scanner = Scanner(string: str)
-    scanner.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
-    var number :Int = 0
-    scanner.scanInt(&number)
-    return number
-}
-
 func getTimeArray() -> [Dictionary<String, String>] {
     var timeArray: [Dictionary<String, String>] = []
     if UserDefaults.standard.array(forKey: timeDataKey) == nil {

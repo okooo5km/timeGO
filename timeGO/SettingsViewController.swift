@@ -123,8 +123,8 @@ extension SettingsViewController: NSTextFieldDelegate {
         let index = timeTableView.selectedRow
         
         if key == TextFieldPlaceHolder.time {
-            if 0 == getIntFromString(str: textField.stringValue) {
-                textField.stringValue = "请输入整数"
+            if !(textField.stringValue.isNumeric || textField.stringValue.isTimerExpression) {
+                textField.stringValue = "请输入正确的时间或表达式"
                 return
             }
         }

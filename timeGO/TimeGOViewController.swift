@@ -13,6 +13,8 @@ class TimeGOViewController: NSViewController {
     var timer: Timer!
     var timeToCount: Int = 0
     var timeToEnd: Int = 0
+    var timerIndexQueue = TimerIndexQueue()
+    var timerNow = [String: String]()
     
     var delegate: StatusItemUpdateDelegate!
     
@@ -40,7 +42,19 @@ class TimeGOViewController: NSViewController {
         }
         for timeItem in timeArray {
             let timeTag = timeItem["tag", default:""]
-            let timeValue = "\(timeItem["time", default: "0"]) 分钟"
+            var timeValue = timeItem["time", default: "0"]
+            if timeValue.isNumeric {
+                timeValue = "\(timeItem["time", default: "0"]) 分钟"
+            } else {
+                let indexArray = timeValue.parseTimerExpression()
+                timeValue = "["
+                for index in indexArray {
+                    let text = timeArray[index]["time"]!
+                    timeValue = timeValue + text + "+"
+                }
+                timeValue.removeLast()
+                timeValue += "] 分钟"
+            }
             let timeTip = timeItem["tip", default: "时间到了！"]
             var itemTitle = (timeTag == "") ? timeValue : "\(timeTag)(\(timeValue))"
             while timeSelector.itemTitles.contains(itemTitle) {
@@ -54,7 +68,21 @@ class TimeGOViewController: NSViewController {
     
     @IBAction func startTimer(_ sender: Any) {
         let timeValue = timeArray[timeSelector.indexOfSelectedItem]["time", default: "0"]
-        timeToCount = getIntFromString(str: timeValue) * 60
+        if timeValue.isNumeric {
+            timerIndexQueue.enqueue(timeSelector.indexOfSelectedItem)
+        } else if timeValue.isTimerExpression {
+            let indexArray = timeValue.parseTimerExpression()
+            for index in indexArray {
+                timerIndexQueue.enqueue(index)
+            }
+        }
+        startSingleTimer()
+    }
+    
+    func startSingleTimer() {
+        timerNow = timeArray[timerIndexQueue.dequeue()!]
+        let timeValue = timerNow["time", default: "0"]
+        timeToCount = timeValue.toInt() * 60
         timeToEnd = timeToCount
         timeLabel.stringValue = "\(timeToCount / 60)'\(timeToCount % 60)\""
         if timeToCount > 0 {
@@ -85,12 +113,22 @@ class TimeGOViewController: NSViewController {
     }
     
     @IBAction func stopTimer(_ sender: Any) {
+        while timerIndexQueue.count > 0 {
+            timerIndexQueue.dequeue()
+        }
+        stopSingleTimer()
+    }
+    
+    func stopSingleTimer() {
         if timer.isValid {
             timer.invalidate()
         }
         self.view = firstView
         if delegate != nil {
             delegate.timerDidStop()
+        }
+        if timerIndexQueue.count > 0 {
+            startSingleTimer()
         }
     }
     
@@ -105,7 +143,7 @@ class TimeGOViewController: NSViewController {
             return
         }
         notificationFly()
-        stopTimer(self)
+        stopSingleTimer()
     }
     
     @IBAction func toggleSettingsView(_ sender: AnyObject) {
@@ -126,8 +164,8 @@ class TimeGOViewController: NSViewController {
     func notificationFly() {
         let userNotification = NSUserNotification()
         userNotification.title = "timeGO"
-        userNotification.subtitle = timeSelector.selectedItem?.title
-        userNotification.informativeText = (timeSelector.selectedItem?.toolTip)!
+        userNotification.subtitle = timerNow["time"]! + "分钟"
+        userNotification.informativeText = timerNow["tip"]!
         let userNotificationCenter = NSUserNotificationCenter.default
         userNotificationCenter.delegate = self as? NSUserNotificationCenterDelegate
         userNotificationCenter.scheduleNotification(userNotification)

@@ -65,7 +65,7 @@
                         <font key="font" metaFont="systemLight" size="14"/>
                     </buttonCell>
                     <connections>
-                        <action selector="startTimer:" target="-2" id="Oeu-5F-KFi"/>
+                        <action selector="startTimer:" target="-2" id="Qgt-Cl-zy4"/>
                     </connections>
                 </button>
             </subviews>
