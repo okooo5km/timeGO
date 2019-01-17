@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cmT-z5-MAD">
-                    <rect key="frame" x="18" y="283" width="78" height="17"/>
+                    <rect key="frame" x="18" y="283" width="324" height="17"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="timeGO v0.1" id="fIg-ZX-sgo">
                         <font key="font" metaFont="system"/>
