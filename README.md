@@ -18,8 +18,10 @@
 
 - 浅色模式(Aqua Mode)
 
-    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190108033908.png)
+    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190117160620.png)
+
+    
 
 - 深色模式(Dark Aqua Mode)
 
-    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190108033900.png)
+    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190117160742.png)
