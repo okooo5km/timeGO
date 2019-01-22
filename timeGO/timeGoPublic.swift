@@ -53,5 +53,6 @@ func tipInfo(withTitle: String, withMessage: String) {
     alert.messageText = withTitle
     alert.informativeText = withMessage
     alert.addButton(withTitle: "确定")
+    alert.window.titlebarAppearsTransparent = true
     alert.runModal()
 }
