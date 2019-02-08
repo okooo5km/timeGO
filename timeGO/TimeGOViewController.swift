@@ -173,6 +173,15 @@ class TimeGOViewController: NSViewController {
         var soundID: SystemSoundID = 0
         AudioServicesCreateSystemSoundID(soundURL! as CFURL, &soundID)
         AudioServicesPlaySystemSound(soundID)
+        notificationSpeak(withText: timerNow["tip"]!)
+    }
+    
+    func notificationSpeak(withText: String) {
+        let task = Process()
+        task.launchPath = "/usr/bin/say"
+        task.arguments = ["-vMei-Jia", withText]
+        task.launch()
+        task.waitUntilExit()
     }
     
     func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
