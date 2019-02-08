@@ -12,6 +12,10 @@ class SettingsViewController: NSViewController {
 
     @IBOutlet weak var appInfoLabel: NSTextField!
     @IBOutlet weak var timeTableView: NSTableView!
+    @IBOutlet weak var voiceNoneButton: NSButton!
+    @IBOutlet weak var voiceCNButton: NSButton!
+    @IBOutlet weak var voiceHKButton: NSButton!
+    @IBOutlet weak var voiceTWButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,16 @@ class SettingsViewController: NSViewController {
         timeArray = getTimeArray()
         timeTableView.delegate = self
         timeTableView.dataSource = self
+        switch getNotificationVoice() {
+        case .zh_CN:
+            voiceCNButton.state = NSButton.StateValue.on
+        case .zh_HK:
+            voiceHKButton.state = NSButton.StateValue.on
+        case .zh_TW:
+            voiceTWButton.state = NSButton.StateValue.on
+        default:
+            voiceNoneButton.state = NSButton.StateValue.on
+        }
     }
     
     override func viewDidAppear() {
@@ -60,6 +74,10 @@ class SettingsViewController: NSViewController {
         timeArray.append(["time": "25", "tip": "请修改此处为您想要的通知消息！", "tag": ""])
         timeTableView.reloadData()
         arrayChanged = true
+    }
+    
+    @IBAction func voiceChoiceChanged(_ sender: NSButton) {
+        UserDefaults.standard.set(sender.toolTip!.toInt(), forKey: UserDataKeys.voice)
     }
 }
 
@@ -132,6 +150,5 @@ extension SettingsViewController: NSTextFieldDelegate {
             timeArray[index][key] = textField.stringValue
             arrayChanged = true
         }
-        print(timeArray)
     }
 }

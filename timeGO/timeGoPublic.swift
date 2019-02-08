@@ -15,6 +15,7 @@ protocol StatusItemUpdateDelegate {
 
 struct UserDataKeys {
     static let time = "timeDataKey"
+    static let voice = "voiceDataKey"
 }
 
 var timeArray = [[String: String]]()
@@ -50,6 +51,17 @@ func getTimeArray() -> [Dictionary<String, String>] {
         }
     }
     return timeArray
+}
+
+enum NotificationVoice: Int {
+    case none = 0
+    case zh_CN = 1
+    case zh_HK = 2
+    case zh_TW = 3
+}
+
+func getNotificationVoice() -> NotificationVoice {
+    return NotificationVoice(rawValue: UserDefaults.standard.integer(forKey: UserDataKeys.voice))!
 }
 
 func tipInfo(withTitle: String, withMessage: String) {

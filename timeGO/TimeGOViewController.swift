@@ -47,13 +47,13 @@ class TimeGOViewController: NSViewController {
                 timeValue = "\(timeItem["time", default: "0"]) 分钟"
             } else {
                 let indexArray = timeValue.parseTimerExpression()
-                timeValue = "["
+                timeValue = ""
                 for index in indexArray {
                     let text = timeArray[index]["time"]!
                     timeValue = timeValue + text + "+"
                 }
                 timeValue.removeLast()
-                timeValue += "] 分钟"
+                timeValue += " 分钟"
             }
             let timeTip = timeItem["tip", default: "时间到了！"]
             var itemTitle = (timeTag == "") ? timeValue : "\(timeTag)(\(timeValue))"
@@ -173,13 +173,26 @@ class TimeGOViewController: NSViewController {
         var soundID: SystemSoundID = 0
         AudioServicesCreateSystemSoundID(soundURL! as CFURL, &soundID)
         AudioServicesPlaySystemSound(soundID)
-        notificationSpeak(withText: timerNow["tip"]!)
+        switch getNotificationVoice() {
+        case .zh_CN:
+            notificationSpeak(text: timerNow["tip"]!, withVoice: "Ting-Ting")
+        case .zh_HK:
+            notificationSpeak(text: timerNow["tip"]!, withVoice: "Sin-ji")
+        case .zh_TW:
+            notificationSpeak(text: timerNow["tip"]!, withVoice: "Mei-Jia")
+        default:
+            notificationSpeak(text: timerNow["tip"]!, withVoice: "none")
+        }
+        
     }
     
-    func notificationSpeak(withText: String) {
+    func notificationSpeak(text: String, withVoice: String) {
+        if withVoice == "none" {
+            return
+        }
         let task = Process()
         task.launchPath = "/usr/bin/say"
-        task.arguments = ["-vMei-Jia", withText]
+        task.arguments = ["-v\(withVoice)", text]
         task.launch()
         task.waitUntilExit()
     }
