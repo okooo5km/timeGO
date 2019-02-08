@@ -156,7 +156,7 @@ class TimeGOViewController: NSViewController {
     
     @IBAction func quitApp(_ sender: Any) {
         if arrayChanged {
-            UserDefaults.standard.set(timeArray, forKey: timeDataKey)
+            UserDefaults.standard.set(timeArray, forKey: UserDataKeys.time)
         }
         NSApplication.shared.terminate(true)
     }
@@ -193,7 +193,7 @@ extension TimeGOViewController: NSPopoverDelegate {
     func popoverDidClose(_ notification: Notification) {
         if arrayChanged {
             updateTimeSelectorFrom(timeArray: timeArray)
-            UserDefaults.standard.set(timeArray, forKey: timeDataKey)
+            UserDefaults.standard.set(timeArray, forKey: UserDataKeys.time)
             arrayChanged = false
         }
     }

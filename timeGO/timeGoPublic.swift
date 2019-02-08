@@ -13,12 +13,16 @@ protocol StatusItemUpdateDelegate {
     func timerUpdate(percent: Double)
 }
 
-let timeDataKey = "timeDataKey"
+struct UserDataKeys {
+    static let time = "timeDataKey"
+}
+
 var timeArray = [[String: String]]()
 var arrayChanged = false
-enum DefaultTipInfo: String {
-    case no1 = "搬砖很累吧！该休息了！"
-    case no2 = "休息的差不多了，起来继续搬砖！"
+
+struct DefaultTipInfo {
+    static let no1 = "搬砖很累吧！该休息了！"
+    static let no2 = "休息的差不多了，起来继续搬砖！"
 }
 
 func getAppInfo() -> String {
@@ -30,18 +34,18 @@ func getAppInfo() -> String {
 
 func getTimeArray() -> [Dictionary<String, String>] {
     var timeArray: [Dictionary<String, String>] = []
-    if UserDefaults.standard.array(forKey: timeDataKey) == nil {
-        timeArray.append(["time": "25", "tip": DefaultTipInfo.no1.rawValue])
-        timeArray.append(["time": "5", "tip": DefaultTipInfo.no2.rawValue])
-        UserDefaults.standard.set(timeArray, forKey: timeDataKey)
+    if UserDefaults.standard.array(forKey: UserDataKeys.time) == nil {
+        timeArray.append(["time": "25", "tip": DefaultTipInfo.no1])
+        timeArray.append(["time": "5", "tip": DefaultTipInfo.no2])
+        UserDefaults.standard.set(timeArray, forKey: UserDataKeys.time)
     } else {
-        if UserDefaults.standard.array(forKey: timeDataKey) is [Int] {
-            UserDefaults.standard.removeObject(forKey: timeDataKey)
-            timeArray.append(["time": "25", "tip": DefaultTipInfo.no1.rawValue])
-            timeArray.append(["time": "5", "tip": DefaultTipInfo.no2.rawValue])
-            UserDefaults.standard.set(timeArray, forKey: timeDataKey)
+        if UserDefaults.standard.array(forKey: UserDataKeys.time) is [Int] {
+            UserDefaults.standard.removeObject(forKey: UserDataKeys.time)
+            timeArray.append(["time": "25", "tip": DefaultTipInfo.no1])
+            timeArray.append(["time": "5", "tip": DefaultTipInfo.no2])
+            UserDefaults.standard.set(timeArray, forKey: UserDataKeys.time)
         } else {
-            timeArray = UserDefaults.standard.array(forKey: timeDataKey) as! [Dictionary<String, String>]
+            timeArray = UserDefaults.standard.array(forKey: UserDataKeys.time) as! [Dictionary<String, String>]
             
         }
     }
