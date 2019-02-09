@@ -18,14 +18,15 @@ class TimeGOViewController: NSViewController {
     
     var delegate: StatusItemUpdateDelegate!
     
-    @IBOutlet var firstView: NSView!
-    @IBOutlet var secondView: NSView!
     @IBOutlet var settingsPopover: NSPopover!
     
     @IBOutlet weak var timeSelector: NSPopUpButton!
     @IBOutlet weak var timeLabel: NSTextField!
     @IBOutlet weak var pauseButton: NSButton!
+    @IBOutlet weak var stopButton: NSButton!
+    @IBOutlet weak var startButton: NSButton!
     @IBOutlet weak var settingsButton: NSButton!
+    @IBOutlet weak var quitButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,9 +87,10 @@ class TimeGOViewController: NSViewController {
         timeToEnd = timeToCount
         timeLabel.stringValue = "\(timeToCount / 60)'\(timeToCount % 60)\""
         if timeToCount > 0 {
-            self.view = secondView
+            setNormalContorls(ishidden: true)
+            setCountContorls(ishidden: false)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCountHandler), userInfo: nil, repeats: true)
-            pauseButton.title = "暂停"
+            pauseButton.image = NSImage(named: "pauseIcon")
             if delegate != nil {
                 delegate.timerDidStart()
             }
@@ -98,17 +100,18 @@ class TimeGOViewController: NSViewController {
     }
     
     @IBAction func pauseTimer(_ sender: Any) {
-        if pauseButton.title == "暂停" {
+        if pauseButton.image?.name() == "pauseIcon" {
             timer.invalidate()
-            pauseButton.title = "继续"
+            pauseButton.image = NSImage(named: "startIcon")
         } else {
             if timeToCount > 0 {
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCountHandler), userInfo: nil, repeats: true)
             } else {
                 tipInfo(withTitle: "提醒", withMessage: "定时时间不能选 0 分钟")
-                self.view = firstView
+                setCountContorls(ishidden: true)
+                setNormalContorls(ishidden: false)
             }
-            pauseButton.title = "暂停"
+            pauseButton.image = NSImage(named: "pauseIcon")
         }
     }
     
@@ -123,7 +126,8 @@ class TimeGOViewController: NSViewController {
         if timer.isValid {
             timer.invalidate()
         }
-        self.view = firstView
+        setCountContorls(ishidden: true)
+        setNormalContorls(ishidden: false)
         if delegate != nil {
             delegate.timerDidStop()
         }
@@ -199,6 +203,19 @@ class TimeGOViewController: NSViewController {
     
     func userNotificationCenter(center: NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
         return true
+    }
+    
+    func setCountContorls(ishidden: Bool) {
+        pauseButton.isHidden = ishidden
+        stopButton.isHidden = ishidden
+        timeLabel.isHidden = ishidden
+    }
+    
+    func setNormalContorls(ishidden: Bool) {
+        timeSelector.isHidden = ishidden
+        startButton.isHidden = ishidden
+        settingsButton.isHidden = ishidden
+        quitButton.isHidden = ishidden
     }
 }
 
