@@ -72,3 +72,21 @@ func tipInfo(withTitle: String, withMessage: String) {
     alert.window.titlebarAppearsTransparent = true
     alert.runModal()
 }
+
+// NSTextField 支持快捷键
+extension NSTextField {
+    open override func performKeyEquivalent(with event: NSEvent) -> Bool {
+        switch event.charactersIgnoringModifiers {
+        case "a":
+            return NSApp.sendAction(#selector(NSText.selectAll(_:)), to: self.window?.firstResponder, from: self)
+        case "c":
+            return NSApp.sendAction(#selector(NSText.copy(_:)), to: self.window?.firstResponder, from: self)
+        case "v":
+            return NSApp.sendAction(#selector(NSText.paste(_:)), to: self.window?.firstResponder, from: self)
+        case "x":
+            return NSApp.sendAction(#selector(NSText.cut(_:)), to: self.window?.firstResponder, from: self)
+        default:
+            return super.performKeyEquivalent(with: event)
+        }
+    }
+}
