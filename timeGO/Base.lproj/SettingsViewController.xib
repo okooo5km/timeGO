@@ -171,17 +171,17 @@
                             <rect key="frame" x="0.0" y="25" width="360" height="5"/>
                         </box>
                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="197" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-p2-SBg">
-                            <rect key="frame" x="20" y="0.0" width="320" height="16"/>
+                            <rect key="frame" x="22" y="0.0" width="316" height="16"/>
                             <subviews>
                                 <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCn-rK-Fkh">
-                                    <rect key="frame" x="0.0" y="0.0" width="70" height="16"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="66" height="16"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Li-1w-lRy">
                                             <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="infoIcon" id="xbr-qp-GKw"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iWp-sw-K2c">
-                                            <rect key="frame" x="16" y="0.0" width="54" height="16"/>
+                                            <rect key="frame" x="16" y="0.0" width="50" height="16"/>
                                             <buttonCell key="cell" type="bevel" title="反馈信息" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="n4D-qR-hay">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                                 <font key="font" metaFont="systemLight" size="12"/>
@@ -201,7 +201,7 @@
                                     </customSpacing>
                                 </stackView>
                                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edF-Yz-8XJ">
-                                    <rect key="frame" x="267" y="0.0" width="53" height="16"/>
+                                    <rect key="frame" x="263" y="0.0" width="53" height="16"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahl-GE-piM">
                                             <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -248,7 +248,7 @@
                     </customSpacing>
                 </stackView>
                 <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-j2-TQl">
-                    <rect key="frame" x="20" y="54" width="314" height="41"/>
+                    <rect key="frame" x="20" y="54" width="309" height="41"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="umg-hX-88K">
                             <rect key="frame" x="-2" y="24" width="61" height="17"/>
@@ -259,10 +259,10 @@
                             </textFieldCell>
                         </textField>
                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="42" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ho-8k-Zao">
-                            <rect key="frame" x="0.0" y="0.0" width="314" height="16"/>
+                            <rect key="frame" x="0.0" y="0.0" width="309" height="16"/>
                             <subviews>
                                 <button toolTip="0" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TvR-w5-Bwp">
-                                    <rect key="frame" x="-1" y="-1" width="47" height="18"/>
+                                    <rect key="frame" x="-1" y="-1" width="46" height="18"/>
                                     <buttonCell key="cell" type="radio" title="关闭" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hnW-jP-p1U">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="systemLight" size="12"/>
@@ -272,7 +272,7 @@
                                     </connections>
                                 </button>
                                 <button toolTip="1" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V0C-FL-qTk">
-                                    <rect key="frame" x="85" y="-1" width="59" height="18"/>
+                                    <rect key="frame" x="84" y="-1" width="57" height="18"/>
                                     <buttonCell key="cell" type="radio" title="普通话" bezelStyle="regularSquare" imagePosition="left" inset="2" id="VsH-ml-NFz">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="systemLight" size="12"/>
@@ -282,7 +282,7 @@
                                     </connections>
                                 </button>
                                 <button toolTip="2" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gTT-qf-kBA">
-                                    <rect key="frame" x="183" y="-1" width="47" height="18"/>
+                                    <rect key="frame" x="180" y="-1" width="46" height="18"/>
                                     <buttonCell key="cell" type="radio" title="粤语" bezelStyle="regularSquare" imagePosition="left" inset="2" id="kDP-hP-Isr">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="systemLight" size="12"/>
@@ -292,7 +292,7 @@
                                     </connections>
                                 </button>
                                 <button toolTip="3" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NZr-GF-Vfw">
-                                    <rect key="frame" x="269" y="-1" width="47" height="18"/>
+                                    <rect key="frame" x="265" y="-1" width="46" height="18"/>
                                     <buttonCell key="cell" type="radio" title="国语" bezelStyle="regularSquare" imagePosition="left" inset="2" id="N51-z4-R9L">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="systemLight" size="12"/>
@@ -329,15 +329,21 @@
             <constraints>
                 <constraint firstItem="g5D-j2-TQl" firstAttribute="top" secondItem="VXu-GL-eCG" secondAttribute="bottom" constant="9" id="0xl-sY-KdJ"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="leading" secondItem="cmT-z5-MAD" secondAttribute="leading" id="2yG-hI-6pf"/>
+                <constraint firstAttribute="trailing" secondItem="3Cz-p2-SBg" secondAttribute="trailing" constant="22" id="4Ku-JU-ykc"/>
+                <constraint firstAttribute="trailing" secondItem="g5D-j2-TQl" secondAttribute="trailing" constant="31" id="BS5-Gf-XiC"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="Ikx-Ou-VXK"/>
                 <constraint firstAttribute="bottom" secondItem="VXu-GL-eCG" secondAttribute="bottom" constant="104" id="NzC-cB-TU1"/>
+                <constraint firstItem="Xby-4f-9YE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Ok4-X6-FWj"/>
+                <constraint firstItem="g5D-j2-TQl" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="QDw-dJ-gfe"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="centerX" secondItem="EcH-eN-SMs" secondAttribute="centerX" id="T8E-36-LOl"/>
+                <constraint firstAttribute="trailing" secondItem="Xby-4f-9YE" secondAttribute="trailing" constant="20" id="bjZ-in-bKj"/>
                 <constraint firstItem="EcH-eN-SMs" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="g9M-zt-h7V"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="leading" secondItem="g5D-j2-TQl" secondAttribute="leading" id="iXp-gJ-rGS"/>
                 <constraint firstItem="EcH-eN-SMs" firstAttribute="top" secondItem="g5D-j2-TQl" secondAttribute="bottom" constant="14" id="jdN-nt-AbA"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="top" secondItem="cmT-z5-MAD" secondAttribute="bottom" constant="8" symbolic="YES" id="pRY-qv-pLo"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="trailing" secondItem="cmT-z5-MAD" secondAttribute="trailing" id="rdl-In-UJk"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="45" id="vQa-w8-zbc"/>
+                <constraint firstItem="3Cz-p2-SBg" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="22" id="wJa-Wv-Twj"/>
             </constraints>
             <point key="canvasLocation" x="-370" y="179"/>
         </customView>

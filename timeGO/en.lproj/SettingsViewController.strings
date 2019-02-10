@@ -1,0 +1,60 @@
+
+/* Class = "NSTextFieldCell"; title = "语音提醒:"; ObjectID = "MnG-PM-5vM"; */
+"MnG-PM-5vM.title" = "Voice Deminder:";
+
+/* Class = "NSButtonCell"; title = "国语"; ObjectID = "N51-z4-R9L"; */
+"N51-z4-R9L.title" = "Mei-Jia";
+
+/* Class = "NSTableColumn"; headerCell.title = "时间(分钟)"; ObjectID = "NP5-vZ-tYw"; */
+"NP5-vZ-tYw.headerCell.title" = "Time(minutes)";
+
+/* Class = "NSButton"; ibShadowedToolTip = "3"; ObjectID = "NZr-GF-Vfw"; */
+"NZr-GF-Vfw.ibShadowedToolTip" = "3";
+
+/* Class = "NSButton"; ibShadowedToolTip = "0"; ObjectID = "TvR-w5-Bwp"; */
+"TvR-w5-Bwp.ibShadowedToolTip" = "0";
+
+/* Class = "NSButton"; ibShadowedToolTip = "1"; ObjectID = "V0C-FL-qTk"; */
+"V0C-FL-qTk.ibShadowedToolTip" = "1";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "VnV-Fp-vGJ"; */
+"VnV-Fp-vGJ.title" = "Text Cell";
+
+/* Class = "NSButtonCell"; title = "普通话"; ObjectID = "VsH-ml-NFz"; */
+"VsH-ml-NFz.title" = "Ting-Ting";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "WFB-Eh-Thf"; */
+"WFB-Eh-Thf.title" = "Text Cell";
+
+/* Class = "NSTableColumn"; headerCell.title = "通知信息"; ObjectID = "WuR-Gj-qhl"; */
+"WuR-Gj-qhl.headerCell.title" = "Tip Message";
+
+/* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "bmb-v5-usv"; */
+"bmb-v5-usv.title" = "Label";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "d86-Ax-9fr"; */
+"d86-Ax-9fr.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "定时器配置:"; ObjectID = "erJ-3w-oOL"; */
+"erJ-3w-oOL.title" = "Timer:";
+
+/* Class = "NSTextFieldCell"; title = "timeGO v0.1"; ObjectID = "fIg-ZX-sgo"; */
+"fIg-ZX-sgo.title" = "timeGO v0.1";
+
+/* Class = "NSButton"; ibShadowedToolTip = "2"; ObjectID = "gTT-qf-kBA"; */
+"gTT-qf-kBA.ibShadowedToolTip" = "2";
+
+/* Class = "NSButtonCell"; title = "关闭"; ObjectID = "hnW-jP-p1U"; */
+"hnW-jP-p1U.title" = "None";
+
+/* Class = "NSButtonCell"; title = "粤语"; ObjectID = "kDP-hP-Isr"; */
+"kDP-hP-Isr.title" = "Sin-ji";
+
+/* Class = "NSButtonCell"; title = "反馈信息"; ObjectID = "n4D-qR-hay"; */
+"n4D-qR-hay.title" = "Feedback";
+
+/* Class = "NSTableColumn"; headerCell.title = "备注"; ObjectID = "o81-Xq-UIv"; */
+"o81-Xq-UIv.headerCell.title" = "Comment";
+
+/* Class = "NSButtonCell"; title = "关于"; ObjectID = "oYm-vW-pfP"; */
+"oYm-vW-pfP.title" = "About";
