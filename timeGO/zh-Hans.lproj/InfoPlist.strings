@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  timeGO
+
+  Created by 5km on 2019/2/10.
+  Copyright © 2019 5km. All rights reserved.
+*/
+
+"CFBundleName" = "时光";
+"CFBundleDisplayName" = "时光";

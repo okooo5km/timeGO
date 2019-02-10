@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B7AAEC021F0D3210033E0C5 /* TimerQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */; };
+		6B9D18DB220FF9D300BB72FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D18DD220FF9D300BB72FB /* InfoPlist.strings */; };
 		6BBE3B9E21E04D5500109E40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3B9D21E04D5500109E40 /* AppDelegate.swift */; };
 		6BBE3BA021E04D5700109E40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3B9F21E04D5700109E40 /* Assets.xcassets */; };
 		6BBE3BA321E04D5700109E40 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3BA121E04D5700109E40 /* MainMenu.xib */; };
@@ -41,6 +42,17 @@
 
 /* Begin PBXFileReference section */
 		6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerQueue.swift; sourceTree = "<group>"; };
+		6B9D18D4220FF98800BB72FB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		6B9D18D5220FF99100BB72FB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		6B9D18D6220FF99E00BB72FB /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		6B9D18D7220FF9AC00BB72FB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		6B9D18D8220FF9B400BB72FB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		6B9D18DC220FF9D300BB72FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6B9D18DE220FF9D600BB72FB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6B9D18DF220FF9D700BB72FB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6B9D18E0220FF9D700BB72FB /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6B9D18E1220FF9D800BB72FB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6B9D18E2220FF9D900BB72FB /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6BBE3B9A21E04D5500109E40 /* timeGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timeGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BBE3B9D21E04D5500109E40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BBE3B9F21E04D5700109E40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +135,7 @@
 				6BBE3BA421E04D5700109E40 /* Info.plist */,
 				6BBE3BA521E04D5700109E40 /* timeGO.entitlements */,
 				6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */,
+				6B9D18DD220FF9D300BB72FB /* InfoPlist.strings */,
 			);
 			path = timeGO;
 			sourceTree = "<group>";
@@ -234,6 +247,11 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
+				"zh-HK",
+				ja,
+				ko,
 			);
 			mainGroup = 6BBE3B9121E04D5500109E40;
 			productRefGroup = 6BBE3B9B21E04D5500109E40 /* Products */;
@@ -253,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BBE3BA021E04D5700109E40 /* Assets.xcassets in Resources */,
+				6B9D18DB220FF9D300BB72FB /* InfoPlist.strings in Resources */,
 				6BBE3BD421E1221500109E40 /* alert-sound.caf in Resources */,
 				6BBE3BA321E04D5700109E40 /* MainMenu.xib in Resources */,
 				6BBE3BCA21E0577700109E40 /* TimeGOViewController.xib in Resources */,
@@ -322,10 +341,28 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6B9D18DD220FF9D300BB72FB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B9D18DC220FF9D300BB72FB /* en */,
+				6B9D18DE220FF9D600BB72FB /* zh-Hans */,
+				6B9D18DF220FF9D700BB72FB /* zh-Hant */,
+				6B9D18E0220FF9D700BB72FB /* zh-HK */,
+				6B9D18E1220FF9D800BB72FB /* ja */,
+				6B9D18E2220FF9D900BB72FB /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		6BBE3BA121E04D5700109E40 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6BBE3BA221E04D5700109E40 /* Base */,
+				6B9D18D4220FF98800BB72FB /* zh-Hans */,
+				6B9D18D5220FF99100BB72FB /* zh-Hant */,
+				6B9D18D6220FF99E00BB72FB /* zh-HK */,
+				6B9D18D7220FF9AC00BB72FB /* ja */,
+				6B9D18D8220FF9B400BB72FB /* ko */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -337,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -384,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -398,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -439,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
