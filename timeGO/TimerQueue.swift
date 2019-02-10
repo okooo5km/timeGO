@@ -50,7 +50,7 @@ extension String {
     
     var isTimerExpression: Bool {
         var str1 = replacingOccurrences(of: " ", with: "")
-        if str1.hasPrefix("$") && str1.hasSuffix("$") {
+        if str1.hasPrefix("$") && str1.hasSuffix("$") && str1.count > 1 {
             str1.removeFirst()
             str1.removeLast()
             return !isEmpty && str1.range(of: "[^ 0-9+]", options: .regularExpression) == nil
