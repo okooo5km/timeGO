@@ -21,11 +21,6 @@ struct UserDataKeys {
 var timeArray = [[String: String]]()
 var arrayChanged = false
 
-struct DefaultTipInfo {
-    static let no1 = NSLocalizedString("timer-default-tip-1", comment: "")
-    static let no2 = NSLocalizedString("timer-default-tip-2", comment: "")
-}
-
 func getAppInfo() -> String {
     let infoDic = Bundle.main.infoDictionary
     let versionStr = infoDic?["CFBundleShortVersionString"] as! String
@@ -35,14 +30,16 @@ func getAppInfo() -> String {
 func getTimeArray() -> [Dictionary<String, String>] {
     var timeArray: [Dictionary<String, String>] = []
     if UserDefaults.standard.array(forKey: UserDataKeys.time) == nil {
-        timeArray.append(["time": "25", "tip": DefaultTipInfo.no1])
-        timeArray.append(["time": "5", "tip": DefaultTipInfo.no2])
+        timeArray.append(["time": "25", "tip": NSLocalizedString("timer-default-tip-1", comment: "")])
+        timeArray.append(["time": "5", "tip": NSLocalizedString("timer-default-tip-2", comment: "")])
         UserDefaults.standard.set(timeArray, forKey: UserDataKeys.time)
     } else {
         if UserDefaults.standard.array(forKey: UserDataKeys.time) is [Int] {
+            let timeOldArray = UserDefaults.standard.array(forKey: UserDataKeys.time) as! [Int]
             UserDefaults.standard.removeObject(forKey: UserDataKeys.time)
-            timeArray.append(["time": "25", "tip": DefaultTipInfo.no1])
-            timeArray.append(["time": "5", "tip": DefaultTipInfo.no2])
+            for time in timeOldArray {
+                timeArray.append(["time": "\(time)", "tip": ""])
+            }
             UserDefaults.standard.set(timeArray, forKey: UserDataKeys.time)
         } else {
             timeArray = UserDefaults.standard.array(forKey: UserDataKeys.time) as! [Dictionary<String, String>]
