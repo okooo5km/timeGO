@@ -22,15 +22,14 @@ var timeArray = [[String: String]]()
 var arrayChanged = false
 
 struct DefaultTipInfo {
-    static let no1 = "搬砖很累吧！该休息了！"
-    static let no2 = "休息的差不多了，起来继续搬砖！"
+    static let no1 = NSLocalizedString("timer-default-tip-1", comment: "")
+    static let no2 = NSLocalizedString("timer-default-tip-2", comment: "")
 }
 
 func getAppInfo() -> String {
     let infoDic = Bundle.main.infoDictionary
-    let appNameStr = infoDic?["CFBundleName"] as! String
     let versionStr = infoDic?["CFBundleShortVersionString"] as! String
-    return appNameStr + " v" + versionStr
+    return NSLocalizedString("app-name", comment: "") + " v" + versionStr
 }
 
 func getTimeArray() -> [Dictionary<String, String>] {
@@ -68,7 +67,7 @@ func tipInfo(withTitle: String, withMessage: String) {
     let alert = NSAlert()
     alert.messageText = withTitle
     alert.informativeText = withMessage
-    alert.addButton(withTitle: "确定")
+    alert.addButton(withTitle: NSLocalizedString("tip-ok-button-title", comment: ""))
     alert.window.titlebarAppearsTransparent = true
     alert.runModal()
 }

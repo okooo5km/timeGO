@@ -5,3 +5,21 @@
   Created by 5km on 2019/2/10.
   Copyright © 2019 5km. All rights reserved.
 */
+"app-name" = "時光";
+
+"about-content" = "是一款簡單的倒計時軟件，您可以通過不同計時器組合得到番茄時鐘！感謝您的支持！";
+"about-title" = "關於";
+
+"feedback-tip-title" = "反饋提醒";
+"feedback-tip-message" = "您有什麼問題向 5km@smslit.cn 發送郵件反饋即可！感謝您的支持！";
+
+"timer-remove-tip-title" = "提醒";
+"timer-remove-tip-message" = "沒有選擇要刪除的計時器！";
+
+"timer-add-prehold-tip" = "請修改此處為您想要的通知消息！";
+"timer-add-exp-tip" = "請輸入正確的時間或表達式";
+
+"timer-default-tip-1" = "搬磚很累吧！該休息了！";
+"timer-default-tip-2" = "休息的差不多了，起來繼續搬磚！";
+
+"tip-ok-button-title" = "確定";

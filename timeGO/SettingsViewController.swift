@@ -42,26 +42,26 @@ class SettingsViewController: NSViewController {
     }
     
     @IBAction func aboutApp(_ sender: Any) {
-        tipInfo(withTitle: "关于", withMessage: "\(getAppInfo()) 是一款简单的计时提醒软件，您可以通过不同计时器组合得到番茄时钟！\n\n感谢您的支持！\n\nhttps://www.smslit.top/2019/01/08/timeGO/")
+        tipInfo(withTitle: NSLocalizedString("about-title", comment: ""), withMessage: "\(getAppInfo()) \(NSLocalizedString("about-content", comment: ""))")
     }
     
     @IBAction func feedbackApp(_ sender: Any) {
         let emailBody           = ""
         let emailService        =  NSSharingService.init(named: NSSharingService.Name.composeEmail)!
         emailService.recipients = ["5km@smslit.cn"]
-        emailService.subject    = "timeGO 反馈"
+        emailService.subject    = getAppInfo() + " -> Feedback"
         
         if emailService.canPerform(withItems: [emailBody]) {
             emailService.perform(withItems: [emailBody])
         } else {
-            tipInfo(withTitle: "反馈信息", withMessage: "您有什么问题向 5km@smslit.cn 发送邮件反馈即可！感谢您的支持！")
+            tipInfo(withTitle: NSLocalizedString("feedback-tip-title", comment: ""), withMessage: NSLocalizedString("feedback-tip-message", comment: ""))
         }
     }
     
     @IBAction func removeTimeTableRow(_ sender: Any) {
         let selectedRow = timeTableView.selectedRow
         if selectedRow == -1 {
-            tipInfo(withTitle: "提醒", withMessage: "没有选择要删除的计时器！")
+            tipInfo(withTitle: NSLocalizedString("timer-remove-tip-title", comment: ""), withMessage: NSLocalizedString("timer-remove-tip-message", comment: ""))
             return
         }
         timeArray.remove(at: selectedRow)
@@ -71,7 +71,7 @@ class SettingsViewController: NSViewController {
     }
 
     @IBAction func addTimeTableRow(_ sender: Any) {
-        timeArray.append(["time": "25", "tip": "请修改此处为您想要的通知消息！", "tag": ""])
+        timeArray.append(["time": "25", "tip": NSLocalizedString("timer-add-prehold-tip", comment: ""), "tag": ""])
         timeTableView.reloadData()
         arrayChanged = true
     }
@@ -142,7 +142,7 @@ extension SettingsViewController: NSTextFieldDelegate {
         
         if key == TextFieldPlaceHolder.time {
             if !(textField.stringValue.isNumeric || textField.stringValue.isTimerExpression) {
-                textField.stringValue = "请输入正确的时间或表达式"
+                textField.stringValue = NSLocalizedString("timer-add-exp-tip", comment: "")
                 return
             }
         }

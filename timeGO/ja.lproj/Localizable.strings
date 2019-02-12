@@ -5,3 +5,22 @@
   Created by 5km on 2019/2/10.
   Copyright © 2019 5km. All rights reserved.
 */
+
+"app-name" = "時間";
+
+"about-content"="これは単純なカウントダウンソフトウェアです。さまざまなタイマーの組み合わせでトマトの時計を入手できます。ご協力ありがとうございます。";
+"about-title" = "about";
+
+"feedback-tip-title" = "フィードバックのお知らせ";
+"feedback-tip-message" = "質問がある場合は、5km @ smslit.cnにフィードバックを送ってください。ご協力ありがとうございます。";
+
+"timer-remove-tip-title" = "リマインダー";
+"timer-remove-tip-message" = "タイマーが削除対象として選択されていません！";
+
+"timer-add-prehold-tip" = "必要な通知メッセージになるようにここで修正してください！";
+"timer-add-exp-tip" = "正しい時間または表現を入力してください ";
+
+"timer-default-tip-1" = "レンガを移動するのはとてもうんざりしています。休む時間です！";
+"timer-default-tip-2" = "残りはほとんどなくなり、レンガを動かし続けます！";
+
+"tip-ok-button-title" = "OK";

@@ -5,3 +5,22 @@
   Created by 5km on 2019/2/10.
   Copyright © 2019 5km. All rights reserved.
 */
+
+"app-name" = "timeGO";
+
+"about-content" = " is a simple time reminder software, you can get the tomato clock through different timer combinations! Thank you for your support!";
+"about-title" = "About";
+
+"feedback-tip-title" = "Feedback";
+"feedback-tip-message" = "If you have any questions, please send email to 5km@smslit.cn with your questions! Thank you for your support!";
+
+"timer-remove-tip-title" = "Warning";
+"timer-remove-tip-message" = "The timer is not selected for deletion!";
+
+"timer-add-prehold-tip" = "Please modify this here to be the notification message you want!";
+"timer-add-exp-tip" = "Please enter the correct expression or time for timer";
+
+"timer-default-tip-1" = "It's very tired to move bricks! It's time to rest!";
+"timer-default-tip-2" = "The rest is almost gone, and it continues to move bricks!";
+
+"tip-ok-button-title" = "OK";
