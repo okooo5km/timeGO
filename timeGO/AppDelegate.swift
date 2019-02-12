@@ -47,6 +47,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         indicator.style = NSProgressIndicator.Style.spinning
         indicator.isHidden = true
         
+        // 首次运行的特别处理
+        let againRun = UserDefaults.standard.bool(forKey: UserDataKeys.again)
+        if !againRun {
+            var languages = ["en", "zh-Hans", "zh-Hant", "en", "ja", "ko"]
+            let lan = Locale.preferredLanguages[0]
+            let lanSelected = lan.prefix(upTo: -3)
+            if languages.contains(lanSelected) {
+                languages[0] = lanSelected
+            }
+            UserDefaults.standard.setValue("system", forKey: UserDataKeys.currentLanguage)
+            UserDefaults.standard.setValue(languages, forKey: UserDataKeys.languages)
+            UserDefaults.standard.setValue(true, forKey: UserDataKeys.again)
+            UserDefaults.standard.synchronize()
+        }
+        
+        // 获取配置中的语言设置
+        let languages = UserDefaults.standard.array(forKey: UserDataKeys.languages) as! [String]
+        currentLanguage = languages[0]
+        Bundle.main.onLanguage()
+        
         if let button = statusItem.button {
             button.image = NSImage(named: "statusIcon")
             button.action = #selector(togglePopoverView)

@@ -16,10 +16,14 @@ protocol StatusItemUpdateDelegate {
 struct UserDataKeys {
     static let time = "timeDataKey"
     static let voice = "voiceDataKey"
+    static let again = "againKey"
+    static let languages = "AppleLanguages"
+    static let currentLanguage = "AppleCurrentLanguage"
 }
 
 var timeArray = [[String: String]]()
 var arrayChanged = false
+var currentLanguage = "system"
 
 func getAppInfo() -> String {
     let infoDic = Bundle.main.infoDictionary
@@ -84,5 +88,56 @@ extension NSTextField {
         default:
             return super.performKeyEquivalent(with: event)
         }
+    }
+}
+
+// 扩展字符串的截取字符串方法
+extension String {
+    func prefix(upTo end: Int) -> String {
+        if abs(end) > count {
+            return self
+        }
+        return String(prefix(upTo: index(endIndex, offsetBy: end)))
+    }
+}
+
+/**
+ *  当调用onLanguage后替换掉mainBundle为当前语言的bundle
+ */
+
+class BundleEx: Bundle {
+    
+    override func localizedString(forKey key: String, value: String?, table tableName: String?) -> String {
+        if let bundle = Bundle.getLanguageBundel() {
+            return bundle.localizedString(forKey: key, value: value, table: tableName)
+        }else {
+            return super.localizedString(forKey: key, value: value, table: tableName)
+        }
+    }
+}
+
+extension Bundle {
+    
+    private static var onLanguageDispatchOnce: ()->Void = {
+        //替换Bundle.main为自定义的BundleEx
+        object_setClass(Bundle.main, BundleEx.self)
+    }
+    
+    func onLanguage(){
+        Bundle.onLanguageDispatchOnce()
+    }
+    
+    class func getLanguageBundel() -> Bundle? {
+        let path = main.path(forResource: currentLanguage, ofType: "lproj")
+        //        print("path = \(languageBundlePath)")
+        guard path != nil else {
+            return nil
+        }
+        let bundle = Bundle(path: path!)
+        guard bundle != nil else {
+            return nil
+        }
+        return bundle!
+        
     }
 }
