@@ -15,7 +15,7 @@ protocol StatusItemUpdateDelegate {
 
 struct UserDataKeys {
     static let time = "timeDataKey"
-    static let voice = "voiceDataKey"
+    static let voice = "voiceNotificationEnable"
     static let again = "againKey"
     static let languages = "AppleLanguages"
     static let currentLanguage = "AppleCurrentLanguage"
@@ -53,17 +53,6 @@ func getTimeArray() -> [Dictionary<String, String>] {
     return timeArray
 }
 
-enum NotificationVoice: Int {
-    case none = 0
-    case zh_CN = 1
-    case zh_HK = 2
-    case zh_TW = 3
-}
-
-func getNotificationVoice() -> NotificationVoice {
-    return NotificationVoice(rawValue: UserDefaults.standard.integer(forKey: UserDataKeys.voice))!
-}
-
 func tipInfo(withTitle: String, withMessage: String) {
     let alert = NSAlert()
     alert.messageText = withTitle
@@ -71,6 +60,18 @@ func tipInfo(withTitle: String, withMessage: String) {
     alert.addButton(withTitle: NSLocalizedString("tip-ok-button-title", comment: ""))
     alert.window.titlebarAppearsTransparent = true
     alert.runModal()
+}
+
+// 语音提醒
+func getNotificationVoice(lang: String) -> String {
+    let voiceDict = [
+        "en": "Alex",
+        "zh-Hans": "Ting-Ting",
+        "zh-Hant": "Mei-Jia",
+        "ja": "Kyoko",
+        "ko": "Yuna"
+    ]
+    return voiceDict[currentLanguage]!
 }
 
 // NSTextField 支持快捷键

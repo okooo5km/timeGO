@@ -12,10 +12,7 @@ class SettingsViewController: NSViewController {
 
     @IBOutlet weak var appInfoLabel: NSTextField!
     @IBOutlet weak var timeTableView: NSTableView!
-    @IBOutlet weak var voiceNoneButton: NSButton!
-    @IBOutlet weak var voiceCNButton: NSButton!
-    @IBOutlet weak var voiceHKButton: NSButton!
-    @IBOutlet weak var voiceTWButton: NSButton!
+    @IBOutlet weak var voiceCheckButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +21,9 @@ class SettingsViewController: NSViewController {
         timeArray = getTimeArray()
         timeTableView.delegate = self
         timeTableView.dataSource = self
-        switch getNotificationVoice() {
-        case .zh_CN:
-            voiceCNButton.state = NSButton.StateValue.on
-        case .zh_HK:
-            voiceHKButton.state = NSButton.StateValue.on
-        case .zh_TW:
-            voiceTWButton.state = NSButton.StateValue.on
-        default:
-            voiceNoneButton.state = NSButton.StateValue.on
+        voiceCheckButton.state = NSButton.StateValue.off
+        if UserDefaults.standard.bool(forKey: UserDataKeys.voice) {
+            voiceCheckButton.state = NSButton.StateValue.on
         }
     }
     
@@ -76,8 +67,12 @@ class SettingsViewController: NSViewController {
         arrayChanged = true
     }
     
-    @IBAction func voiceChoiceChanged(_ sender: NSButton) {
-        UserDefaults.standard.set(sender.toolTip!.toInt(), forKey: UserDataKeys.voice)
+    @IBAction func changeVoiceSetting(_ sender: NSButton) {
+        var enable = false
+        if sender.state == NSButton.StateValue.on {
+            enable = true
+        }
+        UserDefaults.standard.setValue(enable, forKey: UserDataKeys.voice)
     }
 }
 

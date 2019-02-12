@@ -177,17 +177,9 @@ class TimeGOViewController: NSViewController {
         var soundID: SystemSoundID = 0
         AudioServicesCreateSystemSoundID(soundURL! as CFURL, &soundID)
         AudioServicesPlaySystemSound(soundID)
-        switch getNotificationVoice() {
-        case .zh_CN:
-            notificationSpeak(text: timerNow["tip"]!, withVoice: "Ting-Ting")
-        case .zh_HK:
-            notificationSpeak(text: timerNow["tip"]!, withVoice: "Sin-ji")
-        case .zh_TW:
-            notificationSpeak(text: timerNow["tip"]!, withVoice: "Mei-Jia")
-        default:
-            notificationSpeak(text: timerNow["tip"]!, withVoice: "none")
+        if UserDefaults.standard.bool(forKey: UserDataKeys.voice) {
+            notificationSpeak(text: timerNow["tip"]!, withVoice: getNotificationVoice(lang: currentLanguage))
         }
-        
     }
     
     func notificationSpeak(text: String, withVoice: String) {

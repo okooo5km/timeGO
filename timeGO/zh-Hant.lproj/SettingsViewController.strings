@@ -1,10 +1,4 @@
 
-/* Class = "NSTextFieldCell"; title = "语音提醒:"; ObjectID = "MnG-PM-5vM"; */
-"MnG-PM-5vM.title" = "語音提醒:";
-
-/* Class = "NSButtonCell"; title = "国语"; ObjectID = "N51-z4-R9L"; */
-"N51-z4-R9L.title" = "美嘉";
-
 /* Class = "NSTableColumn"; headerCell.title = "时间(分钟)"; ObjectID = "NP5-vZ-tYw"; */
 "NP5-vZ-tYw.headerCell.title" = "時間(分鐘)";
 
@@ -19,9 +13,6 @@
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "VnV-Fp-vGJ"; */
 "VnV-Fp-vGJ.title" = "Text Cell";
-
-/* Class = "NSButtonCell"; title = "普通话"; ObjectID = "VsH-ml-NFz"; */
-"VsH-ml-NFz.title" = "婷婷";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "WFB-Eh-Thf"; */
 "WFB-Eh-Thf.title" = "Text Cell";
@@ -45,10 +36,7 @@
 "gTT-qf-kBA.ibShadowedToolTip" = "2";
 
 /* Class = "NSButtonCell"; title = "关闭"; ObjectID = "hnW-jP-p1U"; */
-"hnW-jP-p1U.title" = "關閉";
-
-/* Class = "NSButtonCell"; title = "粤语"; ObjectID = "kDP-hP-Isr"; */
-"kDP-hP-Isr.title" = "森吉";
+"hnW-jP-p1U.title" = "語音提醒";
 
 /* Class = "NSButtonCell"; title = "反馈信息"; ObjectID = "n4D-qR-hay"; */
 "n4D-qR-hay.title" = "反饋";
