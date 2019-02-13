@@ -6,6 +6,8 @@
 
 - 可配置时间和通知信息，可组合作为番茄钟
 - 状态栏小工具，轻量
+- 支持语音提醒
+- 支持国际化（中文、英文、日语、汉语）
 - 设计简洁，适应系统主题，Dark 模式显示更佳
 
 ## App 截图
@@ -18,10 +20,10 @@
 
 - 浅色模式(Aqua Mode)
 
-    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190117160620.png)
+    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190213182802.jpg)
 
     
 
 - 深色模式(Dark Aqua Mode)
 
-    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190117160742.png)
+    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190213182843.jpg)
