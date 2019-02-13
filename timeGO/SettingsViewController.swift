@@ -83,7 +83,6 @@ class SettingsViewController: NSViewController {
         let lans = ["system", "zh-Hans", "zh-Hant", "en", "ja", "ko"]
         let lan = lans[sender.indexOfSelectedItem]
         var languages = UserDefaults.standard.array(forKey: UserDataKeys.languages) as! [String]
-        UserDefaults.standard.setValue(lan, forKey: UserDataKeys.currentLanguage)
         if lan == "system" {
             let sysLan = Locale.preferredLanguages[1]
             let lanSelected = sysLan.prefix(upTo: -3)
@@ -95,10 +94,24 @@ class SettingsViewController: NSViewController {
         } else {
             languages[0] = lan
         }
-        currentLanguage = languages[0]
-        Bundle.main.onLanguage()
+        if currentLanguage == languages[0] {
+            return
+        }
+        UserDefaults.standard.setValue(lan, forKey: UserDataKeys.currentLanguage)
         UserDefaults.standard.setValue(languages, forKey: UserDataKeys.languages)
         UserDefaults.standard.synchronize()
+        
+        let alert = NSAlert()
+        alert.alertStyle = NSAlert.Style.informational
+        alert.messageText = NSLocalizedString("restart-alert-title", comment: "")
+        alert.informativeText = NSLocalizedString("restart-alert-message", comment: "")
+        alert.addButton(withTitle: NSLocalizedString("restart-alert-button1-title", comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("restart-alert-button2-title", comment: ""))
+        alert.window.titlebarAppearsTransparent = true
+        if alert.runModal() == .alertFirstButtonReturn {
+            tagAppRelaunch = true
+            NSApplication.shared.terminate(true)
+        }
     }
 }
 

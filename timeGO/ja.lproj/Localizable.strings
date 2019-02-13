@@ -26,6 +26,11 @@
 
 "tip-ok-button-title" = "OK";
 
+"restart-alert-title" = "リマインダー";
+"restart-alert-message" = "ソフトウェアの再起動後に言語の変更が有効になります。今すぐ再起動しますか";
+"restart-alert-button1-title" = "はい";
+"restart-alert-button2-title" = "いいえ";
+
 
 // TimeGOViewController.swift
 "minutes-name" = "分";
@@ -33,4 +38,4 @@
 "tip-default-content" = "時間が経過しました！";
 
 "timer-modify-tip-title" = "警告";
-"timer-modify-tip-content" = "時間を0分に設定することはできません ";
+"timer-modify-tip-content" = "時間を0分に設定することはできません";

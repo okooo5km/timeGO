@@ -24,6 +24,7 @@ struct UserDataKeys {
 var timeArray = [[String: String]]()
 var arrayChanged = false
 var currentLanguage = "system"
+var tagAppRelaunch = false
 
 func getAppInfo() -> String {
     let infoDic = Bundle.main.infoDictionary

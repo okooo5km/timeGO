@@ -26,6 +26,10 @@
 
 "tip-ok-button-title" = "确定";
 
+"restart-alert-title" = "提醒";
+"restart-alert-message" = "更改语言在软件重启后生效！您要立即重启吗？";
+"restart-alert-button1-title" = "是";
+"restart-alert-button2-title" = "否";
 
 // TimeGOViewController.swift
 "minutes-name" = "分钟";

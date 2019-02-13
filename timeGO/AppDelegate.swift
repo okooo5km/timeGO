@@ -90,6 +90,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+        if (tagAppRelaunch) {
+            NSWorkspace.shared.launchApplication(withBundleIdentifier: "top.smslit.timeGO", options: [NSWorkspace.LaunchOptions.async,  NSWorkspace.LaunchOptions.newInstance], additionalEventParamDescriptor: nil, launchIdentifier: nil)
+        }
     }
 }
 

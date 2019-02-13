@@ -26,6 +26,10 @@
 
 "tip-ok-button-title" = "OK";
 
+"restart-alert-title" = "Tip";
+"restart-alert-message" = "Changing language takes effect after software restart! Do you want to restart now?";
+"restart-alert-button1-title" = "Yes";
+"restart-alert-button2-title" = "No";
 
 // TimeGOViewController.swift
 "minutes-name" = "minutes";
