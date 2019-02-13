@@ -1,4 +1,25 @@
 
+/* Class = "NSTextFieldCell"; title = "界面語言:"; ObjectID = "W44-g9-zwQ"; */
+"W44-g9-zwQ.title" = "界面語言:";
+
+/* Class = "NSMenuItem"; title = "簡體中文"; ObjectID = "Y6v-uZ-aZr"; */
+"Y6v-uZ-aZr.title" = "簡體中文";
+
+/* Class = "NSMenuItem"; title = "繁體中文"; ObjectID = "fQV-UV-yKX"; */
+"fQV-UV-yKX.title" = "繁體中文";
+
+/* Class = "NSMenuItem"; title = "英文"; ObjectID = "DRg-fb-tft"; */
+"DRg-fb-tft.title" = "英文";
+
+/* Class = "NSMenuItem"; title = "日文"; ObjectID = "NeD-1k-CoD"; */
+"NeD-1k-CoD.title" = "日文";
+
+/* Class = "NSMenuItem"; title = "韓文"; ObjectID = "SMB-mC-o6M"; */
+"SMB-mC-o6M.title" = "韓文";
+
+/* Class = "NSMenuItem"; title = "跟隨系統"; ObjectID = "U00-Ss-cDh"; */
+"U00-Ss-cDh.title" = "跟隨系統";
+
 /* Class = "NSTableColumn"; headerCell.title = "时间(分钟)"; ObjectID = "NP5-vZ-tYw"; */
 "NP5-vZ-tYw.headerCell.title" = "時間(分鐘)";
 

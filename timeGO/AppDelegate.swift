@@ -50,14 +50,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // 首次运行的特别处理
         let againRun = UserDefaults.standard.bool(forKey: UserDataKeys.again)
         if !againRun {
-            var languages = ["en", "zh-Hans", "zh-Hant", "en", "ja", "ko"]
+            var languages = ["zh-Hans", "zh-Hant", "en", "ja", "ko"]
             let lan = Locale.preferredLanguages[0]
-            let lanSelected = lan.prefix(upTo: -3)
+            var lanSelected = lan.prefix(upTo: -3)
             if languages.contains(lanSelected) {
                 languages[0] = lanSelected
+            } else {
+                lanSelected = "en"
             }
             UserDefaults.standard.setValue("system", forKey: UserDataKeys.currentLanguage)
-            UserDefaults.standard.setValue(languages, forKey: UserDataKeys.languages)
+            UserDefaults.standard.setValue([lanSelected] + Locale.preferredLanguages, forKey: UserDataKeys.languages)
             UserDefaults.standard.setValue(true, forKey: UserDataKeys.again)
             UserDefaults.standard.synchronize()
         }

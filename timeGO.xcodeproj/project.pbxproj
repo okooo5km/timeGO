@@ -43,16 +43,16 @@
 
 /* Begin PBXFileReference section */
 		6B39F0C52210034E00FCBF57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
-		6B39F0C82210035000FCBF57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
-		6B39F0CA2210035100FCBF57 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SettingsViewController.strings"; sourceTree = "<group>"; };
-		6B39F0CC2210035300FCBF57 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SettingsViewController.strings"; sourceTree = "<group>"; };
-		6B39F0D02210035600FCBF57 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
-		6B39F0D22210035700FCBF57 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
 		6B3B6C30221012B600500496 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B3B6C32221012B800500496 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6B3B6C33221012B800500496 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6B3B6C35221012BA00500496 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B3B6C36221012BB00500496 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6B3B6C3D2213E4C200500496 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
+		6B3B6C3E2213E4C900500496 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SettingsViewController.strings"; sourceTree = "<group>"; };
+		6B3B6C3F2213E4CB00500496 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SettingsViewController.strings"; sourceTree = "<group>"; };
+		6B3B6C402213E4CD00500496 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
+		6B3B6C412213E4D000500496 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
 		6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerQueue.swift; sourceTree = "<group>"; };
 		6B9D18D4220FF98800BB72FB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		6B9D18D5220FF99100BB72FB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
@@ -355,11 +355,11 @@
 			isa = PBXVariantGroup;
 			children = (
 				6B39F0C52210034E00FCBF57 /* Base */,
-				6B39F0C82210035000FCBF57 /* en */,
-				6B39F0CA2210035100FCBF57 /* zh-Hans */,
-				6B39F0CC2210035300FCBF57 /* zh-Hant */,
-				6B39F0D02210035600FCBF57 /* ja */,
-				6B39F0D22210035700FCBF57 /* ko */,
+				6B3B6C3D2213E4C200500496 /* en */,
+				6B3B6C3E2213E4C900500496 /* zh-Hans */,
+				6B3B6C3F2213E4CB00500496 /* zh-Hant */,
+				6B3B6C402213E4CD00500496 /* ja */,
+				6B3B6C412213E4D000500496 /* ko */,
 			);
 			name = SettingsViewController.xib;
 			sourceTree = "<group>";

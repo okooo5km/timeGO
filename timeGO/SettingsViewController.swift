@@ -13,6 +13,7 @@ class SettingsViewController: NSViewController {
     @IBOutlet weak var appInfoLabel: NSTextField!
     @IBOutlet weak var timeTableView: NSTableView!
     @IBOutlet weak var voiceCheckButton: NSButton!
+    @IBOutlet weak var languageSelector: NSPopUpButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ class SettingsViewController: NSViewController {
         if UserDefaults.standard.bool(forKey: UserDataKeys.voice) {
             voiceCheckButton.state = NSButton.StateValue.on
         }
+        let lans = ["system", "zh-Hans", "zh-Hant", "en", "ja", "ko"]
+        let lan = UserDefaults.standard.object(forKey: UserDataKeys.currentLanguage) as! String
+        languageSelector.selectItem(at: lans.index(of: lan)!)
     }
     
     override func viewDidAppear() {
@@ -73,6 +77,28 @@ class SettingsViewController: NSViewController {
             enable = true
         }
         UserDefaults.standard.setValue(enable, forKey: UserDataKeys.voice)
+    }
+    
+    @IBAction func languageChange(_ sender: NSPopUpButton) {
+        let lans = ["system", "zh-Hans", "zh-Hant", "en", "ja", "ko"]
+        let lan = lans[sender.indexOfSelectedItem]
+        var languages = UserDefaults.standard.array(forKey: UserDataKeys.languages) as! [String]
+        UserDefaults.standard.setValue(lan, forKey: UserDataKeys.currentLanguage)
+        if lan == "system" {
+            let sysLan = Locale.preferredLanguages[1]
+            let lanSelected = sysLan.prefix(upTo: -3)
+            if lans.contains(lanSelected) {
+                languages[0] = lanSelected
+            } else {
+                languages[0] = "en"
+            }
+        } else {
+            languages[0] = lan
+        }
+        currentLanguage = languages[0]
+        Bundle.main.onLanguage()
+        UserDefaults.standard.setValue(languages, forKey: UserDataKeys.languages)
+        UserDefaults.standard.synchronize()
     }
 }
 

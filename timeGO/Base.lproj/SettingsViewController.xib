@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SettingsViewController" customModule="timeGO" customModuleProvider="target">
             <connections>
                 <outlet property="appInfoLabel" destination="cmT-z5-MAD" id="ovj-y8-Gyt"/>
+                <outlet property="languageSelector" destination="MaJ-hV-qhD" id="VHL-sm-mS1"/>
                 <outlet property="timeTableView" destination="Ks8-gr-Xph" id="eew-pU-lFm"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="voiceCheckButton" destination="TvR-w5-Bwp" id="a52-Yq-vOo"/>
@@ -17,11 +18,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="365" height="332"/>
+            <rect key="frame" x="0.0" y="0.0" width="377" height="342"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cmT-z5-MAD">
-                    <rect key="frame" x="18" y="297" width="329" height="19"/>
+                    <rect key="frame" x="18" y="307" width="341" height="19"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="timeGO v0.1" id="fIg-ZX-sgo">
                         <font key="font" metaFont="system" size="16"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -29,10 +30,10 @@
                     </textFieldCell>
                 </textField>
                 <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="7" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXu-GL-eCG">
-                    <rect key="frame" x="20" y="79" width="325" height="210"/>
+                    <rect key="frame" x="20" y="89" width="337" height="210"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S4N-q7-kdl">
-                            <rect key="frame" x="-2" y="193" width="85" height="17"/>
+                            <rect key="frame" x="-2" y="193" width="97" height="17"/>
                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="定时器配置:" id="erJ-3w-oOL">
                                 <font key="font" metaFont="systemLight" size="13"/>
                                 <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -40,13 +41,13 @@
                             </textFieldCell>
                         </textField>
                         <scrollView autohidesScrollers="YES" horizontalLineScroll="25" horizontalPageScroll="10" verticalLineScroll="25" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xby-4f-9YE">
-                            <rect key="frame" x="0.0" y="22" width="325" height="164"/>
+                            <rect key="frame" x="0.0" y="22" width="337" height="164"/>
                             <clipView key="contentView" copiesOnScroll="NO" id="pbJ-lv-oN1">
-                                <rect key="frame" x="1" y="0.0" width="323" height="163"/>
+                                <rect key="frame" x="1" y="0.0" width="335" height="163"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="20" usesAutomaticRowHeights="YES" headerView="6SF-1x-ETv" id="Ks8-gr-Xph">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="138"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="138"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <size key="intercellSpacing" width="3" height="5"/>
                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -78,7 +79,7 @@
                                                 </textFieldCell>
                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             </tableColumn>
-                                            <tableColumn identifier="tagCellID" width="79" minWidth="10" maxWidth="80" id="o81-Xq-UIv">
+                                            <tableColumn identifier="tagCellID" width="80" minWidth="10" maxWidth="80" id="o81-Xq-UIv">
                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="备注">
                                                     <font key="font" metaFont="smallSystem"/>
                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -104,7 +105,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                             <tableHeaderView key="headerView" wantsLayer="YES" id="6SF-1x-ETv">
-                                <rect key="frame" x="0.0" y="0.0" width="323" height="25"/>
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="25"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </tableHeaderView>
                         </scrollView>
@@ -162,13 +163,13 @@
                     </customSpacing>
                 </stackView>
                 <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="11" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EcH-eN-SMs">
-                    <rect key="frame" x="0.0" y="12" width="365" height="30"/>
+                    <rect key="frame" x="0.0" y="12" width="377" height="30"/>
                     <subviews>
                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="e4c-jv-pe9">
-                            <rect key="frame" x="3" y="27" width="360" height="5"/>
+                            <rect key="frame" x="9" y="27" width="360" height="5"/>
                         </box>
                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="197" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-p2-SBg">
-                            <rect key="frame" x="22" y="0.0" width="321" height="18"/>
+                            <rect key="frame" x="22" y="0.0" width="333" height="18"/>
                             <subviews>
                                 <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCn-rK-Fkh">
                                     <rect key="frame" x="0.0" y="2" width="71" height="16"/>
@@ -204,7 +205,7 @@
                                     </customSpacing>
                                 </stackView>
                                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edF-Yz-8XJ">
-                                    <rect key="frame" x="268" y="3" width="53" height="15"/>
+                                    <rect key="frame" x="268" y="3" width="65" height="15"/>
                                     <subviews>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahl-GE-piM">
                                             <rect key="frame" x="0.0" y="0.0" width="16" height="15"/>
@@ -214,7 +215,7 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="aboutIcon" id="GNm-5J-lUh"/>
                                         </imageView>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aXB-Jf-onu">
-                                            <rect key="frame" x="24" y="0.0" width="29" height="15"/>
+                                            <rect key="frame" x="24" y="0.0" width="41" height="15"/>
                                             <buttonCell key="cell" type="bevel" title="关于" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="oYm-vW-pfP">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                                 <font key="font" size="12" name=".PingFangSC-Light"/>
@@ -263,60 +264,79 @@
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
-                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-j2-TQl">
-                    <rect key="frame" x="20" y="56" width="314" height="14"/>
+                <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kB7-By-Zhb">
+                    <rect key="frame" x="20" y="57" width="337" height="21"/>
                     <subviews>
-                        <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="42" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ho-8k-Zao">
-                            <rect key="frame" x="0.0" y="0.0" width="72" height="14"/>
-                            <subviews>
-                                <button toolTip="0" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TvR-w5-Bwp">
-                                    <rect key="frame" x="-2" y="-2" width="76" height="18"/>
-                                    <buttonCell key="cell" type="check" title="语音提醒" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hnW-jP-p1U">
-                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="changeVoiceSetting:" target="-2" id="4EL-s5-yvU"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <visibilityPriorities>
-                                <integer value="1000"/>
-                            </visibilityPriorities>
-                            <customSpacing>
-                                <real value="3.4028234663852886e+38"/>
-                            </customSpacing>
-                        </stackView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dF0-eT-cjg">
+                            <rect key="frame" x="-2" y="2" width="61" height="17"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="界面语言:" id="W44-g9-zwQ">
+                                <font key="font" metaFont="systemLight" size="13"/>
+                                <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <popUpButton horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MaJ-hV-qhD">
+                            <rect key="frame" x="63" y="-3" width="88" height="25"/>
+                            <popUpButtonCell key="cell" type="push" title="跟随系统" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="U00-Ss-cDh" id="JBo-Yi-LC7">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" size="12" name=".AppleSystemUIFont"/>
+                                <menu key="menu" id="TxZ-mg-OuX">
+                                    <items>
+                                        <menuItem title="跟随系统" state="on" id="U00-Ss-cDh"/>
+                                        <menuItem title="简体中文" id="Y6v-uZ-aZr"/>
+                                        <menuItem title="繁体中文" id="fQV-UV-yKX"/>
+                                        <menuItem title="英文" id="DRg-fb-tft"/>
+                                        <menuItem title="日文" id="NeD-1k-CoD"/>
+                                        <menuItem title="韩文" id="SMB-mC-o6M"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                            <connections>
+                                <action selector="languageChange:" target="-2" id="bLE-ah-zNI"/>
+                            </connections>
+                        </popUpButton>
+                        <button toolTip="0" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TvR-w5-Bwp">
+                            <rect key="frame" x="154" y="1" width="185" height="18"/>
+                            <buttonCell key="cell" type="check" title="语音提醒" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hnW-jP-p1U">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system" size="12"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="changeVoiceSetting:" target="-2" id="4EL-s5-yvU"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <visibilityPriorities>
                         <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
                     </visibilityPriorities>
                     <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
             </subviews>
             <constraints>
-                <constraint firstItem="g5D-j2-TQl" firstAttribute="top" secondItem="VXu-GL-eCG" secondAttribute="bottom" constant="9" id="0xl-sY-KdJ"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="leading" secondItem="cmT-z5-MAD" secondAttribute="leading" id="2yG-hI-6pf"/>
                 <constraint firstAttribute="trailing" secondItem="3Cz-p2-SBg" secondAttribute="trailing" constant="22" id="4Ku-JU-ykc"/>
-                <constraint firstAttribute="trailing" secondItem="g5D-j2-TQl" secondAttribute="trailing" constant="31" id="BS5-Gf-XiC"/>
                 <constraint firstItem="cmT-z5-MAD" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="16" id="HHK-5G-msv"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="Ikx-Ou-VXK"/>
+                <constraint firstAttribute="trailing" secondItem="kB7-By-Zhb" secondAttribute="trailing" constant="20" id="LOM-hd-az7"/>
                 <constraint firstItem="Xby-4f-9YE" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="Ok4-X6-FWj"/>
                 <constraint firstAttribute="bottom" secondItem="EcH-eN-SMs" secondAttribute="bottom" constant="12" id="OwY-Nf-Mqu"/>
-                <constraint firstItem="g5D-j2-TQl" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="QDw-dJ-gfe"/>
-                <constraint firstAttribute="bottom" secondItem="g5D-j2-TQl" secondAttribute="bottom" constant="56" id="Qzk-wi-eRb"/>
+                <constraint firstItem="EcH-eN-SMs" firstAttribute="top" secondItem="kB7-By-Zhb" secondAttribute="bottom" constant="14.5" id="QNb-yt-S8D"/>
                 <constraint firstAttribute="trailing" secondItem="Xby-4f-9YE" secondAttribute="trailing" constant="20" id="bjZ-in-bKj"/>
                 <constraint firstItem="EcH-eN-SMs" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="g9M-zt-h7V"/>
-                <constraint firstItem="VXu-GL-eCG" firstAttribute="leading" secondItem="g5D-j2-TQl" secondAttribute="leading" id="iXp-gJ-rGS"/>
-                <constraint firstItem="EcH-eN-SMs" firstAttribute="top" secondItem="g5D-j2-TQl" secondAttribute="bottom" constant="14" id="jdN-nt-AbA"/>
+                <constraint firstItem="kB7-By-Zhb" firstAttribute="top" secondItem="VXu-GL-eCG" secondAttribute="bottom" constant="11.5" id="kbV-gk-nFg"/>
+                <constraint firstItem="kB7-By-Zhb" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="n5W-O2-sZI"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="top" secondItem="cmT-z5-MAD" secondAttribute="bottom" constant="8" symbolic="YES" id="pRY-qv-pLo"/>
                 <constraint firstItem="VXu-GL-eCG" firstAttribute="trailing" secondItem="cmT-z5-MAD" secondAttribute="trailing" id="rdl-In-UJk"/>
                 <constraint firstAttribute="trailing" secondItem="VXu-GL-eCG" secondAttribute="trailing" constant="20" id="sH0-3o-hxH"/>
                 <constraint firstItem="3Cz-p2-SBg" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="22" id="wJa-Wv-Twj"/>
             </constraints>
-            <point key="canvasLocation" x="-370.5" y="164.5"/>
+            <point key="canvasLocation" x="-370.5" y="164"/>
         </customView>
         <textFieldCell lineBreakMode="clipping" title="Label" id="bmb-v5-usv">
             <font key="font" usesAppearanceFont="YES"/>
