@@ -6,6 +6,7 @@
   Copyright © 2019 5km. All rights reserved.
 */
 
+// SettingsViewController.swift
 "app-name" = "時間";
 
 "about-content"="これは単純なカウントダウンソフトウェアです。さまざまなタイマーの組み合わせでトマトの時計を入手できます。ご協力ありがとうございます。";
@@ -24,3 +25,12 @@
 "timer-default-tip-2" = "残りはほとんどなくなり、レンガを動かし続けます！";
 
 "tip-ok-button-title" = "OK";
+
+
+// TimeGOViewController.swift
+"minutes-name" = "分";
+
+"tip-default-content" = "時間が経過しました！";
+
+"timer-modify-tip-title" = "警告";
+"timer-modify-tip-content" = "時間を0分に設定することはできません ";

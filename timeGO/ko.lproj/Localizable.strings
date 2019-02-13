@@ -5,6 +5,8 @@
   Created by 5km on 2019/2/10.
   Copyright © 2019 5km. All rights reserved.
 */
+
+// SettingsViewController.swift
 "app-name"= "시간";
 
 "about-content"= "간단한 카운트 다운 소프트웨어이므로 다른 타이머 조합을 통해 토마토 시계를 얻을 수 있습니다!";
@@ -23,3 +25,12 @@
 "timer-default-tip-2"= "나머지는 거의 사라졌으며 계속 벽돌을 움직입니다!";
 
 "tip-ok-button-title"= "OK";
+
+
+// TimeGOViewController.swift
+"minutes-name"= "분";
+
+"tip-default-content"= "시간이 다되었습니다!";
+
+"timer-modify-tip-title"= "경고";
+"timer-modify-tip-content"= "시간을 0 분으로 설정할 수 없습니다.";

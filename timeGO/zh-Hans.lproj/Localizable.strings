@@ -6,6 +6,7 @@
   Copyright © 2019 5km. All rights reserved.
 */
 
+// SettingsViewController.swift
 "app-name" = "时光";
 
 "about-content" = "是一款简单的计时提醒软件，您可以通过不同计时器组合得到番茄时钟！感谢您的支持！";
@@ -24,3 +25,12 @@
 "timer-default-tip-2" = "休息的差不多了，起来继续搬砖！";
 
 "tip-ok-button-title" = "确定";
+
+
+// TimeGOViewController.swift
+"minutes-name" = "分钟";
+
+"tip-default-content" = "时间到了！";
+
+"timer-modify-tip-title" = "提醒";
+"timer-modify-tip-content" = "定时时间不能设置为 0 分钟";

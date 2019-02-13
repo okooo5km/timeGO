@@ -6,6 +6,7 @@
   Copyright © 2019 5km. All rights reserved.
 */
 
+// SettingsViewController.swift
 "app-name" = "timeGO";
 
 "about-content" = " is a simple time reminder software, you can get the tomato clock through different timer combinations! Thank you for your support!";
@@ -24,3 +25,12 @@
 "timer-default-tip-2" = "The rest is almost gone, and it continues to move bricks!";
 
 "tip-ok-button-title" = "OK";
+
+
+// TimeGOViewController.swift
+"minutes-name" = "minutes";
+
+"tip-default-content" = "Time is up!";
+
+"timer-modify-tip-title" = "Warning";
+"timer-modify-tip-content" = "Time can't be set to 0 minutes";

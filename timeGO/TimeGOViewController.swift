@@ -45,7 +45,7 @@ class TimeGOViewController: NSViewController {
             let timeTag = timeItem["tag", default:""]
             var timeValue = timeItem["time", default: "0"]
             if timeValue.isNumeric {
-                timeValue = "\(timeItem["time", default: "0"]) 分钟"
+                timeValue = "\(timeItem["time", default: "0"]) \(NSLocalizedString("minutes-name", comment: ""))"
             } else {
                 let indexArray = timeValue.parseTimerExpression()
                 timeValue = ""
@@ -54,9 +54,9 @@ class TimeGOViewController: NSViewController {
                     timeValue = timeValue + text + "+"
                 }
                 timeValue.removeLast()
-                timeValue += " 分钟"
+                timeValue += " \(NSLocalizedString("minutes-name", comment: ""))"
             }
-            let timeTip = timeItem["tip", default: "时间到了！"]
+            let timeTip = timeItem["tip", default: NSLocalizedString("tip-default-content", comment: "")]
             var itemTitle = (timeTag == "") ? timeValue : "\(timeTag)(\(timeValue))"
             while timeSelector.itemTitles.contains(itemTitle) {
                 itemTitle.append("\'")
@@ -95,7 +95,7 @@ class TimeGOViewController: NSViewController {
                 delegate.timerDidStart()
             }
         } else {
-            tipInfo(withTitle: "提醒", withMessage: "定时时间不能选 0 分钟")
+            tipInfo(withTitle: NSLocalizedString("timer-modify-tip-title", comment: ""), withMessage: NSLocalizedString("timer-modify-tip-content", comment: ""))
         }
     }
     
@@ -107,7 +107,7 @@ class TimeGOViewController: NSViewController {
             if timeToCount > 0 {
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCountHandler), userInfo: nil, repeats: true)
             } else {
-                tipInfo(withTitle: "提醒", withMessage: "定时时间不能选 0 分钟")
+                tipInfo(withTitle: NSLocalizedString("timer-modify-tip-title", comment: ""), withMessage: NSLocalizedString("timer-modify-tip-content", comment: ""))
                 setCountContorls(ishidden: true)
                 setNormalContorls(ishidden: false)
             }
@@ -168,7 +168,7 @@ class TimeGOViewController: NSViewController {
     func notificationFly() {
         let userNotification = NSUserNotification()
         userNotification.title = "timeGO"
-        userNotification.subtitle = timerNow["time"]! + "分钟"
+        userNotification.subtitle = timerNow["time"]! + NSLocalizedString("minutes-name", comment: "")
         userNotification.informativeText = timerNow["tip"]!
         let userNotificationCenter = NSUserNotificationCenter.default
         userNotificationCenter.delegate = self as? NSUserNotificationCenterDelegate
