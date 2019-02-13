@@ -39,6 +39,7 @@ class TimeGOViewController: NSViewController {
     func updateTimeSelectorFrom(timeArray: [[String: String]]) {
         timeSelector.removeAllItems()
         if timeArray.count <= 0 {
+            startButton.isEnabled = false
             return
         }
         for timeItem in timeArray {
@@ -65,9 +66,13 @@ class TimeGOViewController: NSViewController {
             timeSelector.item(withTitle: itemTitle)?.toolTip = timeTip
         }
         timeSelector.selectItem(at: 0)
+        startButton.isEnabled = true
     }
     
     @IBAction func startTimer(_ sender: Any) {
+        if timeSelector.itemArray.count == 0 {
+            return
+        }
         let timeValue = timeArray[timeSelector.indexOfSelectedItem]["time", default: "0"]
         if timeValue.isNumeric {
             timerIndexQueue.enqueue(timeSelector.indexOfSelectedItem)
