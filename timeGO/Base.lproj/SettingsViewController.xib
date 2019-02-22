@@ -356,7 +356,7 @@
                                     <font key="font" metaFont="systemLight" size="12"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="changeVoiceSetting:" target="-2" id="adK-Bl-XgS"/>
+                                    <action selector="checkUpdateWhenLaunchOrNot:" target="-2" id="ugm-6s-Zai"/>
                                 </connections>
                             </button>
                         </gridCell>

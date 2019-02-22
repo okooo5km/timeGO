@@ -19,6 +19,7 @@ struct UserDataKeys {
     static let again = "againKey"
     static let languages = "AppleLanguages"
     static let currentLanguage = "AppleCurrentLanguage"
+    static let checkUpdate = "checkUpdate"
 }
 
 var timeArray = [[String: String]]()
@@ -74,6 +75,49 @@ func getNotificationVoice(lang: String) -> String {
     ]
     return voiceDict[currentLanguage]!
 }
+
+
+// 检查更新请求成功后要执行的
+func checkUpdateRequestSuccess(data:Data?, response:URLResponse?, error:Error?) -> Void {
+    DispatchQueue.main.async {
+        if let httpResponse = response as? HTTPURLResponse {
+            if httpResponse.statusCode != 200 {
+                // :TODO 加日志
+                tipInfo(withTitle: NSLocalizedString("check-update-tip.title", comment: ""),
+                        withMessage: NSLocalizedString("check-update-tip-network.message", comment: ""))
+                return
+            }
+            var propertyListForamt = PropertyListSerialization.PropertyListFormat.xml
+            do {
+                let infoPlist = try PropertyListSerialization.propertyList(from: data!, options: PropertyListSerialization.ReadOptions.mutableContainersAndLeaves, format: &propertyListForamt) as! [String: AnyObject]
+                let latestVersion = infoPlist["CFBundleShortVersionString"] as! String
+                let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+                if latestVersion == appVersion {
+                    tipInfo(withTitle: NSLocalizedString("check-update-tip.title", comment: ""),
+                            withMessage: NSLocalizedString("check-update-tip-none.message", comment: ""))
+                    return
+                }
+                
+                let alert = NSAlert()
+                alert.alertStyle = NSAlert.Style.informational
+                alert.messageText = NSLocalizedString("check-update-tip.title", comment: "")
+                alert.informativeText = NSLocalizedString("check-update-tip-get.message", comment: "") + " v\(latestVersion)"
+                alert.addButton(withTitle: NSLocalizedString("check-update-tip-get-gobutton.title", comment: ""))
+                alert.addButton(withTitle: NSLocalizedString("check-update-tip-get-ignorebutton.title", comment: ""))
+                alert.window.titlebarAppearsTransparent = true
+                if alert.runModal() == .alertFirstButtonReturn {
+                    if let url = URL(string: "https://github.com/smslit/timeGO/releases/tag/v" + latestVersion) {
+                        NSWorkspace.shared.open(url)
+                    }
+                }
+            } catch {
+                // :TODO 加日志
+                print("Error reading plist: \(error), format: \(propertyListForamt)")
+            }
+        }
+    }
+}
+
 
 // NSTextField 支持快捷键
 extension NSTextField {

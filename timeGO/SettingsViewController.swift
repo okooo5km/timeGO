@@ -129,48 +129,22 @@ class SettingsViewController: NSViewController {
         DispatchQueue.main.async {
             self.checkUpdateButton.isEnabled = true
             self.checkUpdateButton.title = NSLocalizedString("check-update-button-normal.title", comment: "")
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode != 200 {
-                    // :TODO 加日志
-                    tipInfo(withTitle: NSLocalizedString("check-update-tip.title", comment: ""),
-                            withMessage: NSLocalizedString("check-update-tip-network.message", comment: ""))
-                    return
-                }
-                var propertyListForamt = PropertyListSerialization.PropertyListFormat.xml
-                do {
-                    let infoPlist = try PropertyListSerialization.propertyList(from: data!, options: PropertyListSerialization.ReadOptions.mutableContainersAndLeaves, format: &propertyListForamt) as! [String: AnyObject]
-                    let latestVersion = infoPlist["CFBundleShortVersionString"] as! String
-                    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-                    if latestVersion == appVersion {
-                        tipInfo(withTitle: NSLocalizedString("check-update-tip.title", comment: ""),
-                                withMessage: NSLocalizedString("check-update-tip-none.message", comment: ""))
-                        return
-                    }
-                    
-                    let alert = NSAlert()
-                    alert.alertStyle = NSAlert.Style.informational
-                    alert.messageText = NSLocalizedString("check-update-tip.title", comment: "")
-                    alert.informativeText = NSLocalizedString("check-update-tip-get.message", comment: "") + " v\(latestVersion)"
-                    alert.addButton(withTitle: NSLocalizedString("check-update-tip-get-gobutton.title", comment: ""))
-                    alert.addButton(withTitle: NSLocalizedString("check-update-tip-get-ignorebutton.title", comment: ""))
-                    alert.window.titlebarAppearsTransparent = true
-                    if alert.runModal() == .alertFirstButtonReturn {
-                        if let url = URL(string: "https://github.com/smslit/timeGO/releases/tag/v" + latestVersion) {
-                            NSWorkspace.shared.open(url)
-                        }
-                    }
-                } catch {
-                    // :TODO 加日志
-                    print("Error reading plist: \(error), format: \(propertyListForamt)")
-                }
-            }
         }
+        checkUpdateRequestSuccess(data: data, response: response, error: error)
     }
     
     @IBAction func checkUpdateManually(_ sender: Any) {
         checkUpdateButton.title = NSLocalizedString("check-update-button-checking.title", comment: "")
         checkUpdateButton.isEnabled = false
         SettingsViewController.checkUpdate(self.requestSuccess(data:response:error:))
+    }
+    
+    @IBAction func checkUpdateWhenLaunchOrNot(_ sender: NSButton) {
+        var enable = false
+        if sender.state == NSButton.StateValue.on {
+            enable = true
+        }
+        UserDefaults.standard.setValue(enable, forKey: UserDataKeys.checkUpdate)
     }
 }
 
