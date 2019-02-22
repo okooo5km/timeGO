@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B1C429B221FC148008E973D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		6B39F0C52210034E00FCBF57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SettingsViewController.xib; sourceTree = "<group>"; };
 		6B3B6C30221012B600500496 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B3B6C32221012B800500496 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -239,6 +240,11 @@
 				TargetAttributes = {
 					6BBE3B9921E04D5500109E40 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					6BBE3BA921E04D5700109E40 = {
 						CreatedOnToolsVersion = 10.1;
@@ -396,6 +402,7 @@
 				6B9D18D5220FF99100BB72FB /* zh-Hant */,
 				6B9D18D7220FF9AC00BB72FB /* ja */,
 				6B9D18D8220FF9B400BB72FB /* ko */,
+				6B1C429B221FC148008E973D /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

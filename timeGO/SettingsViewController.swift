@@ -14,6 +14,7 @@ class SettingsViewController: NSViewController {
     @IBOutlet weak var timeTableView: NSTableView!
     @IBOutlet weak var voiceCheckButton: NSButton!
     @IBOutlet weak var languageSelector: NSPopUpButton!
+    @IBOutlet weak var checkUpdateButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +113,64 @@ class SettingsViewController: NSViewController {
             tagAppRelaunch = true
             NSApplication.shared.terminate(true)
         }
+    }
+    
+    // 检查更新
+    class func checkUpdate(_ completionHandler: @escaping ((Data?,URLResponse?,Error?)->Void)) {
+        let session = URLSession(configuration: .default)
+        let url = "https://github.com/smslit/timeGO/raw/master/timeGO/Info.plist"
+        let request = URLRequest(url: URL(string: url)!)
+        let task = session.dataTask(with: request, completionHandler: completionHandler)
+        task.resume()
+    }
+    
+    //服务器响应后回调
+    func requestSuccess(data:Data?, response:URLResponse?, error:Error?) -> Void {
+        DispatchQueue.main.async {
+            self.checkUpdateButton.isEnabled = true
+            self.checkUpdateButton.title = NSLocalizedString("check-update-button-normal.title", comment: "")
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode != 200 {
+                    // :TODO 加日志
+                    tipInfo(withTitle: NSLocalizedString("check-update-tip.title", comment: ""),
+                            withMessage: NSLocalizedString("check-update-tip-network.message", comment: ""))
+                    return
+                }
+                var propertyListForamt = PropertyListSerialization.PropertyListFormat.xml
+                do {
+                    let infoPlist = try PropertyListSerialization.propertyList(from: data!, options: PropertyListSerialization.ReadOptions.mutableContainersAndLeaves, format: &propertyListForamt) as! [String: AnyObject]
+                    let latestVersion = infoPlist["CFBundleShortVersionString"] as! String
+                    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+                    if latestVersion == appVersion {
+                        tipInfo(withTitle: NSLocalizedString("check-update-tip.title", comment: ""),
+                                withMessage: NSLocalizedString("check-update-tip-none.message", comment: ""))
+                        return
+                    }
+                    
+                    let alert = NSAlert()
+                    alert.alertStyle = NSAlert.Style.informational
+                    alert.messageText = NSLocalizedString("check-update-tip.title", comment: "")
+                    alert.informativeText = NSLocalizedString("check-update-tip-get.message", comment: "") + " v\(latestVersion)"
+                    alert.addButton(withTitle: NSLocalizedString("check-update-tip-get-gobutton.title", comment: ""))
+                    alert.addButton(withTitle: NSLocalizedString("check-update-tip-get-ignorebutton.title", comment: ""))
+                    alert.window.titlebarAppearsTransparent = true
+                    if alert.runModal() == .alertFirstButtonReturn {
+                        if let url = URL(string: "https://github.com/smslit/timeGO/releases/tag/v" + latestVersion) {
+                            NSWorkspace.shared.open(url)
+                        }
+                    }
+                } catch {
+                    // :TODO 加日志
+                    print("Error reading plist: \(error), format: \(propertyListForamt)")
+                }
+            }
+        }
+    }
+    
+    @IBAction func checkUpdateManually(_ sender: Any) {
+        checkUpdateButton.title = NSLocalizedString("check-update-button-checking.title", comment: "")
+        checkUpdateButton.isEnabled = false
+        SettingsViewController.checkUpdate(self.requestSuccess(data:response:error:))
     }
 }
 

@@ -1,41 +1,84 @@
-/* 
-  Localizable.strings
-  timeGO
 
-  Created by 5km on 2019/2/10.
-  Copyright © 2019 5km. All rights reserved.
-*/
-
-// SettingsViewController.swift
+/* No comment provided by engineer. */
 "app-name" = "時光";
 
+/* No comment provided by engineer. */
 "about-content" = "是一款簡單的倒計時軟件，您可以通過不同計時器組合得到番茄時鐘！感謝您的支持！";
+
+/* No comment provided by engineer. */
 "about-title" = "關於";
 
+/* No comment provided by engineer. */
 "feedback-tip-title" = "反饋提醒";
+
+/* No comment provided by engineer. */
 "feedback-tip-message" = "您有什麼問題向 5km@smslit.cn 發送郵件反饋即可！感謝您的支持！";
 
+/* No comment provided by engineer. */
 "timer-remove-tip-title" = "提醒";
+
+/* No comment provided by engineer. */
 "timer-remove-tip-message" = "沒有選擇要刪除的計時器！";
 
+/* No comment provided by engineer. */
 "timer-add-prehold-tip" = "請修改此處為您想要的通知消息！";
+
+/* No comment provided by engineer. */
 "timer-add-exp-tip" = "請輸入正確的時間或表達式";
 
+/* No comment provided by engineer. */
 "timer-default-tip-1" = "搬磚很累吧！該休息了！";
+
+/* No comment provided by engineer. */
 "timer-default-tip-2" = "休息的差不多了，起來繼續搬磚！";
 
+/* No comment provided by engineer. */
 "tip-ok-button-title" = "確定";
 
+/* No comment provided by engineer. */
 "restart-alert-title" = "提醒";
+
+/* No comment provided by engineer. */
 "restart-alert-message" = "更改語言在軟件重啟後生效！您要立即重啟嗎？";
+
+/* No comment provided by engineer. */
 "restart-alert-button1-title" = "是";
+
+/* No comment provided by engineer. */
 "restart-alert-button2-title" = "否";
 
-
-// TimeGOViewController.swift
+/* No comment provided by engineer. */
 "minutes-name" = "分鐘";
 
+/* No comment provided by engineer. */
 "tip-default-content" = "時間到了！";
 
+/* No comment provided by engineer. */
 "timer-modify-tip-title" = "警告";
+
+/* No comment provided by engineer. */
 "timer-modify-tip-content" = "定時時間不能設置為 0 分鐘";
+
+/* No comment provided by engineer. */
+"check-update-tip-get-gobutton.title" = "前往下載";
+
+/* No comment provided by engineer. */
+"check-update-tip-get-ignorebutton.title" = "忽略";
+
+/* No comment provided by engineer. */
+"check-update-tip-none.message" = "沒有更新！";
+
+/* No comment provided by engineer. */
+"check-update-tip.title" = "檢查更新";
+
+/* No comment provided by engineer. */
+"check-update-tip-get.message" = "發現新版本！";
+
+/* No comment provided by engineer. */
+"check-update-tip-network.message" = "網絡異常！";
+
+/* No comment provided by engineer. */
+"check-update-button-checking.title" = "檢查中...";
+
+/* No comment provided by engineer. */
+"check-update-button-normal.title" = "立即檢查";

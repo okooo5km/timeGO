@@ -1,41 +1,84 @@
-/* 
-  Localizable.strings
-  timeGO
 
-  Created by 5km on 2019/2/10.
-  Copyright © 2019 5km. All rights reserved.
-*/
-
-// SettingsViewController.swift
+/* No comment provided by engineer. */
 "app-name" = "시간";
 
+/* No comment provided by engineer. */
 "about-content" = "간단한 카운트 다운 소프트웨어이므로 다른 타이머 조합을 통해 토마토 시계를 얻을 수 있습니다!";
+
+/* No comment provided by engineer. */
 "about-title" = "소개";
 
+/* No comment provided by engineer. */
 "feedback-tip-title" = "피드백 알리미";
+
+/* No comment provided by engineer. */
 "feedback-tip-message" = "질문이 있으시면, 5km@smslit.cn으로 의견을 보내주십시오! 감사합니다!";
 
+/* No comment provided by engineer. */
 "timer-remove-tip-title" = "알림";
+
+/* No comment provided by engineer. */
 "timer-remove-tip-message" = "타이머가 삭제 대상으로 선택되지 않았습니다!";
 
+/* No comment provided by engineer. */
 "timer-add-prehold-tip" = "원하는 알림 메시지가되도록 여기에서 수정하십시오!";
+
+/* No comment provided by engineer. */
 "timer-add-exp-tip" = "정확한 시간이나 표현을 입력하십시오.";
 
+/* No comment provided by engineer. */
 "timer-default-tip-1" = "벽돌을 옮기려면 매우 피곤합니다! 휴식 할 시간입니다!";
+
+/* No comment provided by engineer. */
 "timer-default-tip-2" = "나머지는 거의 사라졌으며 계속 벽돌을 움직입니다!";
 
+/* No comment provided by engineer. */
 "tip-ok-button-title" = "OK";
 
+/* No comment provided by engineer. */
 "restart-alert-title" = "알림";
+
+/* No comment provided by engineer. */
 "restart-alert-message" = "소프트웨어를 다시 시작하면 언어 변경이 적용됩니다! 지금 재시작 하시겠습니까?";
+
+/* No comment provided by engineer. */
 "restart-alert-button1-title" = "예";
+
+/* No comment provided by engineer. */
 "restart-alert-button2-title" = "아니오";
 
-
-// TimeGOViewController.swift
+/* No comment provided by engineer. */
 "minutes-name" = "분";
 
+/* No comment provided by engineer. */
 "tip-default-content" = "시간이 다되었습니다!";
 
+/* No comment provided by engineer. */
 "timer-modify-tip-title" = "경고";
+
+/* No comment provided by engineer. */
 "timer-modify-tip-content" = "시간을 0 분으로 설정할 수 없습니다.";
+
+/* No comment provided by engineer. */
+"check-update-tip-get-gobutton.title" = "다운로드로 이동";
+
+/* No comment provided by engineer. */
+"check-update-tip-get-ignorebutton.title" = "무시";
+
+/* No comment provided by engineer. */
+"check-update-tip-none.message" = "업데이트 없음!";
+
+/* No comment provided by engineer. */
+"check-update-tip.title" = "업데이트 확인";
+
+/* No comment provided by engineer. */
+"check-update-tip-get.message" = "새 버전을 찾았습니다!";
+
+/* No comment provided by engineer. */
+"check-update-tip-network.message" = "네트워크 이상！";
+
+/* No comment provided by engineer. */
+"check-update-button-checking.title" = "업데이트 확인 ...";
+
+/* No comment provided by engineer. */
+"check-update-button-normal.title" = "즉시 확인";

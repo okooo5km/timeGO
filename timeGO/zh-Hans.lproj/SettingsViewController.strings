@@ -23,14 +23,8 @@
 /* Class = "NSTableColumn"; headerCell.title = "时间(分钟)"; ObjectID = "NP5-vZ-tYw"; */
 "NP5-vZ-tYw.headerCell.title" = "时间(分钟)";
 
-/* Class = "NSButton"; ibShadowedToolTip = "3"; ObjectID = "NZr-GF-Vfw"; */
-"NZr-GF-Vfw.ibShadowedToolTip" = "3";
-
 /* Class = "NSButton"; ibShadowedToolTip = "0"; ObjectID = "TvR-w5-Bwp"; */
 "TvR-w5-Bwp.ibShadowedToolTip" = "0";
-
-/* Class = "NSButton"; ibShadowedToolTip = "1"; ObjectID = "V0C-FL-qTk"; */
-"V0C-FL-qTk.ibShadowedToolTip" = "1";
 
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "VnV-Fp-vGJ"; */
 "VnV-Fp-vGJ.title" = "Text Cell";
@@ -53,10 +47,7 @@
 /* Class = "NSTextFieldCell"; title = "timeGO v0.1"; ObjectID = "fIg-ZX-sgo"; */
 "fIg-ZX-sgo.title" = "timeGO v0.1";
 
-/* Class = "NSButton"; ibShadowedToolTip = "2"; ObjectID = "gTT-qf-kBA"; */
-"gTT-qf-kBA.ibShadowedToolTip" = "2";
-
-/* Class = "NSButtonCell"; title = "关闭"; ObjectID = "hnW-jP-p1U"; */
+/* Class = "NSButtonCell"; title = "语音提醒"; ObjectID = "hnW-jP-p1U"; */
 "hnW-jP-p1U.title" = "语音提醒";
 
 /* Class = "NSButtonCell"; title = "反馈信息"; ObjectID = "n4D-qR-hay"; */
@@ -67,3 +58,15 @@
 
 /* Class = "NSButtonCell"; title = "关于"; ObjectID = "oYm-vW-pfP"; */
 "oYm-vW-pfP.title" = "关于";
+
+/* Class = "NSTextFieldCell"; title = "检查更新:"; ObjectID = "086-h8-FsB"; */
+"086-h8-FsB.title" = "检查更新";
+
+/* Class = "NSButton"; ibShadowedToolTip = "0"; ObjectID = "EYg-NL-mWs"; */
+"EYg-NL-mWs.ibShadowedToolTip" = "检查更新";
+
+/* Class = "NSButtonCell"; title = "立即检查"; ObjectID = "p93-rI-Fob"; */
+"p93-rI-Fob.title" = "立即检查";
+
+/* Class = "NSButtonCell"; title = "启动时检查"; ObjectID = "yPt-PV-PEz"; */
+"yPt-PV-PEz.title" = "启动时检查";

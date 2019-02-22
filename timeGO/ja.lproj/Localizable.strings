@@ -1,41 +1,84 @@
-/* 
-  Localizable.strings
-  timeGO
 
-  Created by 5km on 2019/2/10.
-  Copyright © 2019 5km. All rights reserved.
-*/
-
-// SettingsViewController.swift
+/* No comment provided by engineer. */
 "app-name" = "時間";
 
-"about-content"="これは単純なカウントダウンソフトウェアです。さまざまなタイマーの組み合わせでトマトの時計を入手できます。ご協力ありがとうございます。";
+/* No comment provided by engineer. */
+"about-content" = "これは単純なカウントダウンソフトウェアです。さまざまなタイマーの組み合わせでトマトの時計を入手できます。ご協力ありがとうございます。";
+
+/* No comment provided by engineer. */
 "about-title" = "about";
 
+/* No comment provided by engineer. */
 "feedback-tip-title" = "フィードバックのお知らせ";
+
+/* No comment provided by engineer. */
 "feedback-tip-message" = "質問がある場合は、5km @ smslit.cnにフィードバックを送ってください。ご協力ありがとうございます。";
 
+/* No comment provided by engineer. */
 "timer-remove-tip-title" = "リマインダー";
+
+/* No comment provided by engineer. */
 "timer-remove-tip-message" = "タイマーが削除対象として選択されていません！";
 
+/* No comment provided by engineer. */
 "timer-add-prehold-tip" = "必要な通知メッセージになるようにここで修正してください！";
+
+/* No comment provided by engineer. */
 "timer-add-exp-tip" = "正しい時間または表現を入力してください ";
 
+/* No comment provided by engineer. */
 "timer-default-tip-1" = "レンガを移動するのはとてもうんざりしています。休む時間です！";
+
+/* No comment provided by engineer. */
 "timer-default-tip-2" = "残りはほとんどなくなり、レンガを動かし続けます！";
 
+/* No comment provided by engineer. */
 "tip-ok-button-title" = "OK";
 
+/* No comment provided by engineer. */
 "restart-alert-title" = "リマインダー";
+
+/* No comment provided by engineer. */
 "restart-alert-message" = "ソフトウェアの再起動後に言語の変更が有効になります。今すぐ再起動しますか";
+
+/* No comment provided by engineer. */
 "restart-alert-button1-title" = "はい";
+
+/* No comment provided by engineer. */
 "restart-alert-button2-title" = "いいえ";
 
-
-// TimeGOViewController.swift
+/* No comment provided by engineer. */
 "minutes-name" = "分";
 
+/* No comment provided by engineer. */
 "tip-default-content" = "時間が経過しました！";
 
+/* No comment provided by engineer. */
 "timer-modify-tip-title" = "警告";
+
+/* No comment provided by engineer. */
 "timer-modify-tip-content" = "時間を0分に設定することはできません";
+
+/* No comment provided by engineer. */
+"check-update-tip-get-gobutton.title" = "ダウンロードする";
+
+/* No comment provided by engineer. */
+"check-update-tip-get-ignorebutton.title" = "無視する";
+
+/* No comment provided by engineer. */
+"check-update-tip-none.message" = "更新なし";
+
+/* No comment provided by engineer. */
+"check-update-tip.title" = "更新を確認する";
+
+/* No comment provided by engineer. */
+"check-update-tip-get.message" = "新バージョンを発見";
+
+/* No comment provided by engineer. */
+"check-update-tip-network.message" = "ネットワーク異常！";
+
+/* No comment provided by engineer. */
+"check-update-button-checking.title" = "確認中...";
+
+/* No comment provided by engineer. */
+"check-update-button-normal.title" = "すぐに確認する";
