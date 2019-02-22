@@ -1,11 +1,11 @@
 
-/* Class = "NSTextFieldCell"; title = "界面語言:"; ObjectID = "W44-g9-zwQ"; */
+/* Class = "NSTextFieldCell"; title = "界面语言:"; ObjectID = "W44-g9-zwQ"; */
 "W44-g9-zwQ.title" = "界面語言:";
 
-/* Class = "NSMenuItem"; title = "簡體中文"; ObjectID = "Y6v-uZ-aZr"; */
+/* Class = "NSMenuItem"; title = "简体中文"; ObjectID = "Y6v-uZ-aZr"; */
 "Y6v-uZ-aZr.title" = "簡體中文";
 
-/* Class = "NSMenuItem"; title = "繁體中文"; ObjectID = "fQV-UV-yKX"; */
+/* Class = "NSMenuItem"; title = "繁体中文"; ObjectID = "fQV-UV-yKX"; */
 "fQV-UV-yKX.title" = "繁體中文";
 
 /* Class = "NSMenuItem"; title = "英文"; ObjectID = "DRg-fb-tft"; */
@@ -14,10 +14,10 @@
 /* Class = "NSMenuItem"; title = "日文"; ObjectID = "NeD-1k-CoD"; */
 "NeD-1k-CoD.title" = "日文";
 
-/* Class = "NSMenuItem"; title = "韓文"; ObjectID = "SMB-mC-o6M"; */
+/* Class = "NSMenuItem"; title = "韩文"; ObjectID = "SMB-mC-o6M"; */
 "SMB-mC-o6M.title" = "韓文";
 
-/* Class = "NSMenuItem"; title = "跟隨系統"; ObjectID = "U00-Ss-cDh"; */
+/* Class = "NSMenuItem"; title = "跟随系统"; ObjectID = "U00-Ss-cDh"; */
 "U00-Ss-cDh.title" = "跟隨系統";
 
 /* Class = "NSTableColumn"; headerCell.title = "时间(分钟)"; ObjectID = "NP5-vZ-tYw"; */
@@ -59,14 +59,14 @@
 /* Class = "NSButtonCell"; title = "关于"; ObjectID = "oYm-vW-pfP"; */
 "oYm-vW-pfP.title" = "關於";
 
-/* Class = "NSTextFieldCell"; title = "檢查更新:"; ObjectID = "086-h8-FsB"; */
+/* Class = "NSTextFieldCell"; title = "检查更新:"; ObjectID = "086-h8-FsB"; */
 "086-h8-FsB.title" = "檢查更新";
 
 /* Class = "NSButton"; ibShadowedToolTip = "0"; ObjectID = "EYg-NL-mWs"; */
 "EYg-NL-mWs.ibShadowedToolTip" = "檢查更新";
 
-/* Class = "NSButtonCell"; title = "立即檢查"; ObjectID = "p93-rI-Fob"; */
+/* Class = "NSButtonCell"; title = "立即检查"; ObjectID = "p93-rI-Fob"; */
 "p93-rI-Fob.title" = "立即檢查";
 
-/* Class = "NSButtonCell"; title = "啟動時檢查"; ObjectID = "yPt-PV-PEz"; */
+/* Class = "NSButtonCell"; title = "启动时检查"; ObjectID = "yPt-PV-PEz"; */
 "yPt-PV-PEz.title" = "啟動時檢查";

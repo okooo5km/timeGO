@@ -6,7 +6,7 @@
 "Y6v-uZ-aZr.title" = "중국어 간체";
 
 /* Class = "NSMenuItem"; title = "繁体中文"; ObjectID = "fQV-UV-yKX"; */
-"fQV-UV-yKX.title" =  "중국어 번체";
+"fQV-UV-yKX.title" = "중국어 번체";
 
 /* Class = "NSMenuItem"; title = "英文"; ObjectID = "DRg-fb-tft"; */
 "DRg-fb-tft.title" = "영어";
@@ -15,7 +15,7 @@
 "NeD-1k-CoD.title" = "일본어";
 
 /* Class = "NSMenuItem"; title = "韩文"; ObjectID = "SMB-mC-o6M"; */
-"SMB-mC-o6M.title" =  "한국어";
+"SMB-mC-o6M.title" = "한국어";
 
 /* Class = "NSMenuItem"; title = "跟随系统"; ObjectID = "U00-Ss-cDh"; */
 "U00-Ss-cDh.title" = "시스템을 따른다";
@@ -60,13 +60,13 @@
 "oYm-vW-pfP.title" = "소개";
 
 /* Class = "NSTextFieldCell"; title = "检查更新:"; ObjectID = "086-h8-FsB"; */
-"086-h8-FsB.title"= "업데이트 확인";
+"086-h8-FsB.title" = "업데이트 확인";
 
 /* Class = "NSButton"; ibShadowedToolTip = "0"; ObjectID = "EYg-NL-mWs"; */
-"EYg-NL-mWs.ibShadowedToolTip"= "업데이트 확인";
+"EYg-NL-mWs.ibShadowedToolTip" = "업데이트 확인";
 
 /* Class = "NSButtonCell"; title = "立即检查"; ObjectID = "p93-rI-Fob"; */
-"p93-rI-Fob.title"= "즉시 확인";
+"p93-rI-Fob.title" = "즉시 확인";
 
 /* Class = "NSButtonCell"; title = "启动时检查"; ObjectID = "yPt-PV-PEz"; */
-"yPt-PV-PEz.title"= "시작시 점검";
+"yPt-PV-PEz.title" = "시작시 점검";
