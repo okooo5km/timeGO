@@ -10,6 +10,14 @@
 - 支持国际化（中文、英文、日语、韩语）
 - 设计简洁，适应系统主题，Dark 模式显示更佳
 
+## 开发
+
+工程中使用了一个本地化工具 [BartyCrouch](https://github.com/Flinesoft/BartyCrouch)，添加了编译 phase，每次编译都会调用工具检查本地化文件，所以为了正常使用工程，建议您安装此工具：
+
+```Bash
+brew install bartycrouch
+```
+
 ## App 截图
 
 ### 图标截图
