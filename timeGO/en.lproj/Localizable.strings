@@ -1,63 +1,18 @@
 
 /* No comment provided by engineer. */
-"app-name" = "timeGO";
-
-/* No comment provided by engineer. */
 "about-content" = " is a simple time reminder software, you can get the tomato clock through different timer combinations! Thank you for your support!";
 
 /* No comment provided by engineer. */
 "about-title" = "About";
 
 /* No comment provided by engineer. */
-"feedback-tip-title" = "Feedback";
+"app-name" = "timeGO";
 
 /* No comment provided by engineer. */
-"feedback-tip-message" = "If you have any questions, please send email to 5km@smslit.cn with your questions! Thank you for your support!";
+"check-update-button-checking.title" = "Checking...";
 
 /* No comment provided by engineer. */
-"timer-remove-tip-title" = "Warning";
-
-/* No comment provided by engineer. */
-"timer-remove-tip-message" = "The timer is not selected for deletion!";
-
-/* No comment provided by engineer. */
-"timer-add-prehold-tip" = "Please modify this here to be the notification message you want!";
-
-/* No comment provided by engineer. */
-"timer-add-exp-tip" = "Please enter the correct expression or time for timer";
-
-/* No comment provided by engineer. */
-"timer-default-tip-1" = "It's very tired to move bricks! It's time to rest!";
-
-/* No comment provided by engineer. */
-"timer-default-tip-2" = "The rest is almost gone, and it continues to move bricks!";
-
-/* No comment provided by engineer. */
-"tip-ok-button-title" = "OK";
-
-/* No comment provided by engineer. */
-"restart-alert-title" = "Tip";
-
-/* No comment provided by engineer. */
-"restart-alert-message" = "Changing language takes effect after software restart! Do you want to restart now?";
-
-/* No comment provided by engineer. */
-"restart-alert-button1-title" = "Yes";
-
-/* No comment provided by engineer. */
-"restart-alert-button2-title" = "No";
-
-/* No comment provided by engineer. */
-"minutes-name" = "minutes";
-
-/* No comment provided by engineer. */
-"tip-default-content" = "Time is up!";
-
-/* No comment provided by engineer. */
-"timer-modify-tip-title" = "Warning";
-
-/* No comment provided by engineer. */
-"timer-modify-tip-content" = "Time can't be set to 0 minutes";
+"check-update-button-normal.title" = "Check Manually";
 
 /* No comment provided by engineer. */
 "check-update-tip-get-gobutton.title" = "Download";
@@ -66,19 +21,64 @@
 "check-update-tip-get-ignorebutton.title" = "Ignore";
 
 /* No comment provided by engineer. */
-"check-update-tip-none.message" = "No updates!";
-
-/* No comment provided by engineer. */
-"check-update-tip.title" = "Check for updates";
-
-/* No comment provided by engineer. */
 "check-update-tip-get.message" = "Found new version!";
 
 /* No comment provided by engineer. */
 "check-update-tip-network.message" = "Connection Invalid!";
 
 /* No comment provided by engineer. */
-"check-update-button-checking.title" = "Checking...";
+"check-update-tip-none.message" = "No updates!";
 
 /* No comment provided by engineer. */
-"check-update-button-normal.title" = "Check Manually";
+"check-update-tip.title" = "Check for updates";
+
+/* No comment provided by engineer. */
+"feedback-tip-message" = "If you have any questions, please send email to 5km@smslit.cn with your questions! Thank you for your support!";
+
+/* No comment provided by engineer. */
+"feedback-tip-title" = "Feedback";
+
+/* No comment provided by engineer. */
+"minutes-name" = "minutes";
+
+/* No comment provided by engineer. */
+"restart-alert-button1-title" = "Yes";
+
+/* No comment provided by engineer. */
+"restart-alert-button2-title" = "No";
+
+/* No comment provided by engineer. */
+"restart-alert-message" = "Changing language takes effect after software restart! Do you want to restart now?";
+
+/* No comment provided by engineer. */
+"restart-alert-title" = "Tip";
+
+/* No comment provided by engineer. */
+"timer-add-exp-tip" = "Please enter the correct expression or time for timer";
+
+/* No comment provided by engineer. */
+"timer-add-prehold-tip" = "Please modify this here to be the notification message you want!";
+
+/* No comment provided by engineer. */
+"timer-default-tip-1" = "It's very tired to move bricks! It's time to rest!";
+
+/* No comment provided by engineer. */
+"timer-default-tip-2" = "The rest is almost gone, and it continues to move bricks!";
+
+/* No comment provided by engineer. */
+"timer-modify-tip-content" = "Time can't be set to 0 minutes";
+
+/* No comment provided by engineer. */
+"timer-modify-tip-title" = "Warning";
+
+/* No comment provided by engineer. */
+"timer-remove-tip-message" = "The timer is not selected for deletion!";
+
+/* No comment provided by engineer. */
+"timer-remove-tip-title" = "Warning";
+
+/* No comment provided by engineer. */
+"tip-default-content" = "Time is up!";
+
+/* No comment provided by engineer. */
+"tip-ok-button-title" = "OK";

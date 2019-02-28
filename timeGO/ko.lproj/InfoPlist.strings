@@ -1,3 +1,6 @@
+
+"CFBundleDisplayName" = "시간";
+
 /* 
   InfoPlist.strings
   timeGO
@@ -6,4 +9,3 @@
   Copyright © 2019 5km. All rights reserved.
 */
 "CFBundleName" = "시간";
-"CFBundleDisplayName" = "시간";

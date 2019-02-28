@@ -1,39 +1,6 @@
 
-/* Class = "NSTextFieldCell"; title = "界面语言:"; ObjectID = "W44-g9-zwQ"; */
-"W44-g9-zwQ.title" = "Language:";
-
-/* Class = "NSMenuItem"; title = "简体中文"; ObjectID = "Y6v-uZ-aZr"; */
-"Y6v-uZ-aZr.title" = "Chinese(Simplified)";
-
-/* Class = "NSMenuItem"; title = "繁体中文"; ObjectID = "fQV-UV-yKX"; */
-"fQV-UV-yKX.title" = "Chinese(Traditional)";
-
-/* Class = "NSMenuItem"; title = "英文"; ObjectID = "DRg-fb-tft"; */
-"DRg-fb-tft.title" = "English";
-
-/* Class = "NSMenuItem"; title = "日文"; ObjectID = "NeD-1k-CoD"; */
-"NeD-1k-CoD.title" = "Japanese";
-
-/* Class = "NSMenuItem"; title = "韩文"; ObjectID = "SMB-mC-o6M"; */
-"SMB-mC-o6M.title" = "Korean";
-
-/* Class = "NSMenuItem"; title = "跟随系统"; ObjectID = "U00-Ss-cDh"; */
-"U00-Ss-cDh.title" = "Follow System";
-
-/* Class = "NSButton"; ibShadowedToolTip = "0"; ObjectID = "TvR-w5-Bwp"; */
-"TvR-w5-Bwp.ibShadowedToolTip" = "0";
-
-/* Class = "NSTableColumn"; headerCell.title = "时间(分钟)"; ObjectID = "NP5-vZ-tYw"; */
-"NP5-vZ-tYw.headerCell.title" = "Time(Minutes)";
-
-/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "VnV-Fp-vGJ"; */
-"VnV-Fp-vGJ.title" = "Text Cell";
-
-/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "WFB-Eh-Thf"; */
-"WFB-Eh-Thf.title" = "Text Cell";
-
-/* Class = "NSTableColumn"; headerCell.title = "通知信息"; ObjectID = "WuR-Gj-qhl"; */
-"WuR-Gj-qhl.headerCell.title" = "Tip Message";
+/* Class = "NSTextFieldCell"; title = "检查更新:"; ObjectID = "086-h8-FsB"; */
+"086-h8-FsB.title" = "Check for updates";
 
 /* Class = "NSTextFieldCell"; title = "Label"; ObjectID = "bmb-v5-usv"; */
 "bmb-v5-usv.title" = "Label";
@@ -41,11 +8,20 @@
 /* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "d86-Ax-9fr"; */
 "d86-Ax-9fr.title" = "Text Cell";
 
+/* Class = "NSMenuItem"; title = "英文"; ObjectID = "DRg-fb-tft"; */
+"DRg-fb-tft.title" = "English";
+
 /* Class = "NSTextFieldCell"; title = "定时器配置:"; ObjectID = "erJ-3w-oOL"; */
 "erJ-3w-oOL.title" = "Timer:";
 
+/* Class = "NSButton"; ibShadowedToolTip = "0"; ObjectID = "EYg-NL-mWs"; */
+"EYg-NL-mWs.ibShadowedToolTip" = "Check for updates";
+
 /* Class = "NSTextFieldCell"; title = "timeGO v0.1"; ObjectID = "fIg-ZX-sgo"; */
 "fIg-ZX-sgo.title" = "timeGO v0.1";
+
+/* Class = "NSMenuItem"; title = "繁体中文"; ObjectID = "fQV-UV-yKX"; */
+"fQV-UV-yKX.title" = "Chinese(Traditional)";
 
 /* Class = "NSButtonCell"; title = "语音提醒"; ObjectID = "hnW-jP-p1U"; */
 "hnW-jP-p1U.title" = "Voice Demind";
@@ -53,20 +29,44 @@
 /* Class = "NSButtonCell"; title = "反馈信息"; ObjectID = "n4D-qR-hay"; */
 "n4D-qR-hay.title" = "Feedback";
 
+/* Class = "NSMenuItem"; title = "日文"; ObjectID = "NeD-1k-CoD"; */
+"NeD-1k-CoD.title" = "Japanese";
+
+/* Class = "NSTableColumn"; headerCell.title = "时间(分钟)"; ObjectID = "NP5-vZ-tYw"; */
+"NP5-vZ-tYw.headerCell.title" = "Time(Minutes)";
+
 /* Class = "NSTableColumn"; headerCell.title = "备注"; ObjectID = "o81-Xq-UIv"; */
 "o81-Xq-UIv.headerCell.title" = "Comment";
 
 /* Class = "NSButtonCell"; title = "关于"; ObjectID = "oYm-vW-pfP"; */
 "oYm-vW-pfP.title" = "About";
 
-/* Class = "NSTextFieldCell"; title = "检查更新:"; ObjectID = "086-h8-FsB"; */
-"086-h8-FsB.title" = "Check for updates";
-
-/* Class = "NSButton"; ibShadowedToolTip = "0"; ObjectID = "EYg-NL-mWs"; */
-"EYg-NL-mWs.ibShadowedToolTip" = "Check for updates";
-
 /* Class = "NSButtonCell"; title = "立即检查"; ObjectID = "p93-rI-Fob"; */
 "p93-rI-Fob.title" = "Check Manually";
+
+/* Class = "NSMenuItem"; title = "韩文"; ObjectID = "SMB-mC-o6M"; */
+"SMB-mC-o6M.title" = "Korean";
+
+/* Class = "NSButton"; ibShadowedToolTip = "0"; ObjectID = "TvR-w5-Bwp"; */
+"TvR-w5-Bwp.ibShadowedToolTip" = "0";
+
+/* Class = "NSMenuItem"; title = "跟随系统"; ObjectID = "U00-Ss-cDh"; */
+"U00-Ss-cDh.title" = "Follow System";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "VnV-Fp-vGJ"; */
+"VnV-Fp-vGJ.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "界面语言:"; ObjectID = "W44-g9-zwQ"; */
+"W44-g9-zwQ.title" = "Language:";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "WFB-Eh-Thf"; */
+"WFB-Eh-Thf.title" = "Text Cell";
+
+/* Class = "NSTableColumn"; headerCell.title = "通知信息"; ObjectID = "WuR-Gj-qhl"; */
+"WuR-Gj-qhl.headerCell.title" = "Tip Message";
+
+/* Class = "NSMenuItem"; title = "简体中文"; ObjectID = "Y6v-uZ-aZr"; */
+"Y6v-uZ-aZr.title" = "Chinese(Simplified)";
 
 /* Class = "NSButtonCell"; title = "启动时检查"; ObjectID = "yPt-PV-PEz"; */
 "yPt-PV-PEz.title" = "Check at startup";
