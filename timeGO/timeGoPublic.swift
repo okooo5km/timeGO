@@ -138,6 +138,12 @@ extension NSTextField {
             return NSApp.sendAction(#selector(NSText.paste(_:)), to: self.window?.firstResponder, from: self)
         case "x":
             return NSApp.sendAction(#selector(NSText.cut(_:)), to: self.window?.firstResponder, from: self)
+        case "z":
+            self.window?.firstResponder?.undoManager?.undo()
+            return true
+        case "Z":
+            self.window?.firstResponder?.undoManager?.redo()
+            return true
         default:
             return super.performKeyEquivalent(with: event)
         }
