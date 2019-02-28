@@ -115,16 +115,7 @@ class SettingsViewController: NSViewController {
         }
     }
     
-    // 检查更新
-    class func checkUpdate(_ completionHandler: @escaping ((Data?,URLResponse?,Error?)->Void)) {
-        let session = URLSession(configuration: .default)
-        let url = "https://github.com/smslit/timeGO/raw/master/timeGO/Info.plist"
-        let request = URLRequest(url: URL(string: url)!)
-        let task = session.dataTask(with: request, completionHandler: completionHandler)
-        task.resume()
-    }
-    
-    //服务器响应后回调
+    // 检查更新服务器响应后回调
     func requestSuccess(data:Data?, response:URLResponse?, error:Error?) -> Void {
         DispatchQueue.main.async {
             self.checkUpdateButton.isEnabled = true
@@ -136,7 +127,7 @@ class SettingsViewController: NSViewController {
     @IBAction func checkUpdateManually(_ sender: Any) {
         checkUpdateButton.title = NSLocalizedString("check-update-button-checking.title", comment: "")
         checkUpdateButton.isEnabled = false
-        SettingsViewController.checkUpdate(self.requestSuccess(data:response:error:))
+        checkUpdate(self.requestSuccess(data:response:error:))
     }
     
     @IBAction func checkUpdateWhenLaunchOrNot(_ sender: NSButton) {

@@ -76,6 +76,13 @@ func getNotificationVoice(lang: String) -> String {
     return voiceDict[currentLanguage]!
 }
 
+func checkUpdate(_ completionHandler: @escaping ((Data?,URLResponse?,Error?)->Void)) {
+    let session = URLSession(configuration: .default)
+    let url = "https://github.com/smslit/timeGO/raw/master/timeGO/Info.plist"
+    let request = URLRequest(url: URL(string: url)!)
+    let task = session.dataTask(with: request, completionHandler: completionHandler)
+    task.resume()
+}
 
 // 检查更新请求成功后要执行的
 func checkUpdateRequestSuccess(data:Data?, response:URLResponse?, error:Error?) -> Void {

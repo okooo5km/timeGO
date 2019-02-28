@@ -71,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // 启动时检查更新
         if UserDefaults.standard.bool(forKey: UserDataKeys.checkUpdate) {
-            SettingsViewController.checkUpdate(checkUpdateRequestSuccess(data:response:error:))
+            checkUpdate(checkUpdateRequestSuccess(data:response:error:))
         }
         
         if let button = statusItem.button {
