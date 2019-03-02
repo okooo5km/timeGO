@@ -22,7 +22,7 @@
 		6BBE3BD421E1221500109E40 /* alert-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3BD321E1221500109E40 /* alert-sound.caf */; };
 		6BBE3BD821E125A300109E40 /* PopoverMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */; };
 		6BEDDAF621E26C720097CE3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDDAF421E26C720097CE3D /* SettingsViewController.swift */; };
-		6BEDDAFB21E309DA0097CE3D /* timeGoPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDDAFA21E309DA0097CE3D /* timeGoPublic.swift */; };
+		6BEDDAFB21E309DA0097CE3D /* TimeGoPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDDAFA21E309DA0097CE3D /* TimeGoPublic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,7 @@
 		6BBE3BD321E1221500109E40 /* alert-sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alert-sound.caf"; sourceTree = "<group>"; };
 		6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverMonitor.swift; sourceTree = "<group>"; };
 		6BEDDAF421E26C720097CE3D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		6BEDDAFA21E309DA0097CE3D /* timeGoPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeGoPublic.swift; sourceTree = "<group>"; };
+		6BEDDAFA21E309DA0097CE3D /* TimeGoPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeGoPublic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,22 +134,22 @@
 		6BBE3B9C21E04D5500109E40 /* timeGO */ = {
 			isa = PBXGroup;
 			children = (
-				6BEDDAFA21E309DA0097CE3D /* timeGoPublic.swift */,
+				6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */,
+				6BEDDAFA21E309DA0097CE3D /* TimeGoPublic.swift */,
+				6B911C35222A2E5D001FFB77 /* TimeGoUpdater.swift */,
 				6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */,
-				6BBE3BD321E1221500109E40 /* alert-sound.caf */,
 				6BBE3B9D21E04D5500109E40 /* AppDelegate.swift */,
 				6BEDDAF421E26C720097CE3D /* SettingsViewController.swift */,
 				6B39F0C62210034E00FCBF57 /* SettingsViewController.xib */,
 				6BBE3BC721E0577700109E40 /* TimeGOViewController.swift */,
 				6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */,
-				6BBE3B9F21E04D5700109E40 /* Assets.xcassets */,
 				6BBE3BA121E04D5700109E40 /* MainMenu.xib */,
+				6BBE3BD321E1221500109E40 /* alert-sound.caf */,
+				6BBE3B9F21E04D5700109E40 /* Assets.xcassets */,
 				6BBE3BA421E04D5700109E40 /* Info.plist */,
 				6BBE3BA521E04D5700109E40 /* timeGO.entitlements */,
-				6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */,
 				6B9D18DD220FF9D300BB72FB /* InfoPlist.strings */,
 				6B3B6C31221012B600500496 /* Localizable.strings */,
-				6B911C35222A2E5D001FFB77 /* TimeGoUpdater.swift */,
 			);
 			path = timeGO;
 			sourceTree = "<group>";
@@ -179,10 +179,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BBE3BBE21E04D5700109E40 /* Build configuration list for PBXNativeTarget "timeGO" */;
 			buildPhases = (
+				6B1C429C221FCDDF008E973D /* bartycrouch */,
 				6BBE3B9621E04D5500109E40 /* Sources */,
 				6BBE3B9721E04D5500109E40 /* Frameworks */,
 				6BBE3B9821E04D5500109E40 /* Resources */,
-				6B1C429C221FCDDF008E973D /* bartycrouch */,
 			);
 			buildRules = (
 			);
@@ -332,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which bartycrouch > /dev/null; then\n    bartycrouch update -x -v\n    bartycrouch lint -x -v\nelse\necho \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which bartycrouch > /dev/null; then\n    bartycrouch update -x\n    bartycrouch lint -x\nelse\necho \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -341,7 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BEDDAFB21E309DA0097CE3D /* timeGoPublic.swift in Sources */,
+				6BEDDAFB21E309DA0097CE3D /* TimeGoPublic.swift in Sources */,
 				6BBE3B9E21E04D5500109E40 /* AppDelegate.swift in Sources */,
 				6B7AAEC021F0D3210033E0C5 /* TimerQueue.swift in Sources */,
 				6B911C36222A2E5D001FFB77 /* TimeGoUpdater.swift in Sources */,
