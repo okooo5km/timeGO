@@ -1,5 +1,5 @@
 
-"CFBundleDisplayName" = "時間";
+"CFBundleDisplayName" = "Time Go";
 
 /* 
   InfoPlist.strings
@@ -8,4 +8,4 @@
   Created by 5km on 2019/2/10.
   Copyright © 2019 5km. All rights reserved.
 */
-"CFBundleName" = "時間";
+"CFBundleName" = "Time Go";
