@@ -15,6 +15,7 @@ class SettingsViewController: NSViewController {
     @IBOutlet weak var voiceCheckButton: NSButton!
     @IBOutlet weak var languageSelector: NSPopUpButton!
     @IBOutlet weak var checkUpdateButton: NSButton!
+    @IBOutlet weak var updateCheckButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,10 @@ class SettingsViewController: NSViewController {
         voiceCheckButton.state = NSButton.StateValue.off
         if UserDefaults.standard.bool(forKey: UserDataKeys.voice) {
             voiceCheckButton.state = NSButton.StateValue.on
+        }
+        updateCheckButton.state = NSButton.StateValue.off
+        if UserDefaults.standard.bool(forKey: UserDataKeys.checkUpdate) {
+            updateCheckButton.state = NSButton.StateValue.on
         }
         let lans = ["system", "zh-Hans", "zh-Hant", "en", "ja", "ko"]
         let lan = UserDefaults.standard.object(forKey: UserDataKeys.currentLanguage) as! String
@@ -78,6 +83,7 @@ class SettingsViewController: NSViewController {
             enable = true
         }
         UserDefaults.standard.setValue(enable, forKey: UserDataKeys.voice)
+        UserDefaults.standard.synchronize()
     }
     
     @IBAction func languageChange(_ sender: NSPopUpButton) {
@@ -115,19 +121,14 @@ class SettingsViewController: NSViewController {
         }
     }
     
-    // 检查更新服务器响应后回调
-    func requestSuccess(data:Data?, response:URLResponse?, error:Error?) -> Void {
-        DispatchQueue.main.async {
-            self.checkUpdateButton.isEnabled = true
-            self.checkUpdateButton.title = NSLocalizedString("check-update-button-normal.title", comment: "")
-        }
-        checkUpdateRequestSuccess(data: data, response: response, error: error)
-    }
-    
     @IBAction func checkUpdateManually(_ sender: Any) {
         checkUpdateButton.title = NSLocalizedString("check-update-button-checking.title", comment: "")
         checkUpdateButton.isEnabled = false
-        checkUpdate(self.requestSuccess(data:response:error:))
+        let updater = TimeGoUpdater(user: "smslit") {
+            self.checkUpdateButton.isEnabled = true
+            self.checkUpdateButton.title = NSLocalizedString("check-update-button-normal.title", comment: "")
+        }
+        updater.check()
     }
     
     @IBAction func checkUpdateWhenLaunchOrNot(_ sender: NSButton) {

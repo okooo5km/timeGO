@@ -12,6 +12,7 @@
                 <outlet property="checkUpdateButton" destination="KFF-sH-V7u" id="XI2-P7-iy5"/>
                 <outlet property="languageSelector" destination="MaJ-hV-qhD" id="VHL-sm-mS1"/>
                 <outlet property="timeTableView" destination="Ks8-gr-Xph" id="eew-pU-lFm"/>
+                <outlet property="updateCheckButton" destination="EYg-NL-mWs" id="4Jm-wx-nLg"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="voiceCheckButton" destination="TvR-w5-Bwp" id="a52-Yq-vOo"/>
             </connections>
