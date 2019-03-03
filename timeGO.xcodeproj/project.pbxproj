@@ -134,22 +134,22 @@
 		6BBE3B9C21E04D5500109E40 /* timeGO */ = {
 			isa = PBXGroup;
 			children = (
+				6BBE3BA421E04D5700109E40 /* Info.plist */,
 				6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */,
 				6BEDDAFA21E309DA0097CE3D /* TimeGoPublic.swift */,
 				6B911C35222A2E5D001FFB77 /* TimeGoUpdater.swift */,
 				6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */,
 				6BBE3B9D21E04D5500109E40 /* AppDelegate.swift */,
+				6BBE3BA121E04D5700109E40 /* MainMenu.xib */,
 				6BEDDAF421E26C720097CE3D /* SettingsViewController.swift */,
 				6B39F0C62210034E00FCBF57 /* SettingsViewController.xib */,
 				6BBE3BC721E0577700109E40 /* TimeGOViewController.swift */,
 				6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */,
-				6BBE3BA121E04D5700109E40 /* MainMenu.xib */,
-				6BBE3BD321E1221500109E40 /* alert-sound.caf */,
-				6BBE3B9F21E04D5700109E40 /* Assets.xcassets */,
-				6BBE3BA421E04D5700109E40 /* Info.plist */,
-				6BBE3BA521E04D5700109E40 /* timeGO.entitlements */,
 				6B9D18DD220FF9D300BB72FB /* InfoPlist.strings */,
 				6B3B6C31221012B600500496 /* Localizable.strings */,
+				6BBE3BD321E1221500109E40 /* alert-sound.caf */,
+				6BBE3B9F21E04D5700109E40 /* Assets.xcassets */,
+				6BBE3BA521E04D5700109E40 /* timeGO.entitlements */,
 			);
 			path = timeGO;
 			sourceTree = "<group>";

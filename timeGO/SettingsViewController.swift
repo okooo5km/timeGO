@@ -124,11 +124,11 @@ class SettingsViewController: NSViewController {
     @IBAction func checkUpdateManually(_ sender: Any) {
         checkUpdateButton.title = NSLocalizedString("check-update-button-checking.title", comment: "")
         checkUpdateButton.isEnabled = false
-        let updater = TimeGoUpdater(user: "smslit") {
+        let updater = TimeGoUpdater(user: "smslit")
+        updater.check() {
             self.checkUpdateButton.isEnabled = true
             self.checkUpdateButton.title = NSLocalizedString("check-update-button-normal.title", comment: "")
         }
-        updater.check()
     }
     
     @IBAction func checkUpdateWhenLaunchOrNot(_ sender: NSButton) {

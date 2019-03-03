@@ -11,33 +11,26 @@ import Cocoa
 
 class TimeGoUpdater {
     
-    private var url: URL?
-    private var callback: (()->Void)
+    private let url: URL?
+    private let user: String
     
-    init(user: String, callback: @escaping (()->Void)) {
+    init(user: String) {
+        self.user = user
         let proName = Bundle.main.infoDictionary!["CFBundleExecutable"]!
-        let url = "https://raw.githubusercontent.com/smslit/\(proName)/master/\(proName)/Info.plist"
-        self.url = URL(string: url)
-        self.callback = callback
+        self.url = URL(string: "https://raw.githubusercontent.com/\(user)/\(proName)/master/\(proName)/Info.plist")
     }
     
-    func check() {
-        checkRequest(checkUpdateRequestSuccess(data:response:error:))
-    }
-    
-    private func checkRequest(_ completionHandler: @escaping ((Data?,URLResponse?,Error?)->Void)) {
+    func check(callback: @escaping (()->Void)) {
         let session = URLSession(configuration: .default)
-        if let url = self.url {
-            let request = URLRequest(url: url)
-            let task = session.dataTask(with: request, completionHandler: completionHandler)
-            task.resume()
+        let task = session.dataTask(with: self.url!) { (data, response, error) in
+            self.checkUpdateRequestSuccess(data: data, response: response, error: error, callback: callback)
         }
+        task.resume()
     }
     
-    // 检查更新请求成功后要执行的
-    private func checkUpdateRequestSuccess(data:Data?, response:URLResponse?, error:Error?) -> Void {
+    private func checkUpdateRequestSuccess(data:Data?, response:URLResponse?, error:Error?, callback: @escaping (()->Void)) -> Void {
         DispatchQueue.main.async {
-            self.callback()
+            callback()
             if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode != 200 {
                     // :TODO 加日志
@@ -56,17 +49,13 @@ class TimeGoUpdater {
                         return
                     }
                     
-                    let alert = NSAlert()
-                    alert.alertStyle = NSAlert.Style.informational
-                    alert.messageText = NSLocalizedString("check-update-tip.title", comment: "检查更新")
-                    alert.informativeText = NSLocalizedString("check-update-tip-get.message", comment: "发现新版本") + " v\(latestVersion)"
-                    alert.addButton(withTitle: NSLocalizedString("check-update-tip-get-gobutton.title", comment: "前往下载"))
-                    alert.addButton(withTitle: NSLocalizedString("check-update-tip-get-ignorebutton.title", comment: "忽略"))
-                    alert.window.titlebarAppearsTransparent = true
-                    if alert.runModal() == .alertFirstButtonReturn {
-                        if let url = URL(string: "https://github.com/smslit/\(Bundle.main.infoDictionary!["CFBundleExecutable"]!)/releases/tag/v" + latestVersion) {
-                            NSWorkspace.shared.open(url)
-                        }
+                    tipInfo(withTitle: NSLocalizedString("check-update-tip.title", comment: "检查更新"),
+                            withMessage: NSLocalizedString("check-update-tip-get.message", comment: "发现新版本") + " v\(latestVersion)",
+                        oKButtonTitle: NSLocalizedString("check-update-tip-get-gobutton.title", comment: "前往下载"),
+                        cancelButtonTitle: NSLocalizedString("check-update-tip-get-ignorebutton.title", comment: "忽略")) {
+                            if let url = URL(string: "https://github.com/\(self.user)/\(Bundle.main.infoDictionary!["CFBundleExecutable"]!)/releases/tag/v" + latestVersion) {
+                                NSWorkspace.shared.open(url)
+                            }
                     }
                 } catch {
                     // :TODO 加日志
@@ -75,5 +64,4 @@ class TimeGoUpdater {
             }
         }
     }
-    
 }

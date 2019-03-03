@@ -64,6 +64,19 @@ func tipInfo(withTitle: String, withMessage: String) {
     alert.runModal()
 }
 
+func tipInfo(withTitle title: String, withMessage message: String, oKButtonTitle: String, cancelButtonTitle: String, okHandler:(()-> Void)) {
+    let alert = NSAlert()
+    alert.alertStyle = NSAlert.Style.informational
+    alert.messageText = title
+    alert.informativeText = message
+    alert.addButton(withTitle: oKButtonTitle)
+    alert.addButton(withTitle: cancelButtonTitle)
+    alert.window.titlebarAppearsTransparent = true
+    if alert.runModal() == .alertFirstButtonReturn {
+        okHandler()
+    }
+}
+
 // 语音提醒
 func getNotificationVoice(lang: String) -> String {
     let voiceDict = [
