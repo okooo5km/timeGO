@@ -63,11 +63,10 @@ extension String {
     }
     
     func toInt() -> Int {
-        let scanner = Scanner(string: self)
-        scanner.scanUpToCharacters(from: CharacterSet.decimalDigits, into: nil)
-        var number :Int = 0
-        scanner.scanInt(&number)
-        return number
+        if let number = Int(self) {
+            return number
+        }
+        return 0
     }
     
     func parseTimerExpression() -> [Int] {

@@ -96,8 +96,8 @@ class TimeGOViewController: NSViewController {
             setCountContorls(ishidden: false)
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCountHandler), userInfo: nil, repeats: true)
             pauseButton.image = NSImage(named: "pauseIcon")
-            if delegate != nil {
-                delegate.timerDidStart()
+            if let timeGo = delegate {
+                timeGo.timerDidStart()
             }
         } else {
             tipInfo(withTitle: NSLocalizedString("timer-modify-tip-title", comment: ""), withMessage: NSLocalizedString("timer-modify-tip-content", comment: ""))
@@ -133,8 +133,8 @@ class TimeGOViewController: NSViewController {
         }
         setCountContorls(ishidden: true)
         setNormalContorls(ishidden: false)
-        if delegate != nil {
-            delegate.timerDidStop()
+        if let timeGo = delegate {
+            timeGo.timerDidStop()
         }
         if timerIndexQueue.count > 0 {
             startSingleTimer()
@@ -145,9 +145,9 @@ class TimeGOViewController: NSViewController {
         if timeToCount > 0 {
             timeToCount -= 1
             timeLabel.stringValue = "\(timeToCount / 60)'\(timeToCount % 60)\""
-            if delegate != nil {
+            if let timeGo = delegate {
                 let percent = 1.0 - Double(timeToCount) / Double(timeToEnd)
-                delegate.timerUpdate(percent: percent)
+                timeGo.timerUpdate(percent: percent)
             }
             return
         }
