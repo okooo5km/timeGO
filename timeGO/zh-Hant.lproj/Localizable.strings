@@ -41,6 +41,9 @@
 /* No comment provided by engineer. */
 "minutes-name" = "分鐘";
 
+/* 通知的标题：时光流逝 */
+"notification-title" = "時光流逝";
+
 /* No comment provided by engineer. */
 "restart-alert-button1-title" = "是";
 

@@ -172,7 +172,8 @@ class TimeGOViewController: NSViewController {
     
     func notificationFly() {
         let userNotification = NSUserNotification()
-        userNotification.title = "timeGO"
+        userNotification.contentImage = NSImage(named: "AppIcon")
+        userNotification.title = NSLocalizedString("notification-title", comment: "通知的标题：时光流逝")
         userNotification.subtitle = timerNow["time"]! + NSLocalizedString("minutes-name", comment: "")
         userNotification.informativeText = timerNow["tip"]!
         let userNotificationCenter = NSUserNotificationCenter.default
