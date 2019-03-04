@@ -14,6 +14,8 @@ class TimeGoUpdater {
     private let url: URL?
     private let user: String
     
+    static let share = TimeGoUpdater(user: "smslit")
+    
     init(user: String) {
         self.user = user
         let proName = Bundle.main.infoDictionary!["CFBundleExecutable"]!

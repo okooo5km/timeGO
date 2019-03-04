@@ -71,8 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // 启动时检查更新
         if UserDefaults.standard.bool(forKey: UserDataKeys.checkUpdate) {
-            let updater = TimeGoUpdater(user: "smslit")
-            updater.check() {}
+            TimeGoUpdater.share.check {}
         }
         
         if let button = statusItem.button {
