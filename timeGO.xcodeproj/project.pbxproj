@@ -19,7 +19,6 @@
 		6BBE3BBA21E04D5700109E40 /* timeGOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3BB921E04D5700109E40 /* timeGOUITests.swift */; };
 		6BBE3BC921E0577700109E40 /* TimeGOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3BC721E0577700109E40 /* TimeGOViewController.swift */; };
 		6BBE3BCA21E0577700109E40 /* TimeGOViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */; settings = {ASSET_TAGS = (timeSelector, ); }; };
-		6BBE3BD421E1221500109E40 /* alert-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3BD321E1221500109E40 /* alert-sound.caf */; };
 		6BBE3BD821E125A300109E40 /* PopoverMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */; };
 		6BEDDAF621E26C720097CE3D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDDAF421E26C720097CE3D /* SettingsViewController.swift */; };
 		6BEDDAFB21E309DA0097CE3D /* TimeGoPublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDDAFA21E309DA0097CE3D /* TimeGoPublic.swift */; };
@@ -80,7 +79,6 @@
 		6BBE3BBB21E04D5700109E40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BBE3BC721E0577700109E40 /* TimeGOViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGOViewController.swift; sourceTree = "<group>"; };
 		6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeGOViewController.xib; sourceTree = "<group>"; };
-		6BBE3BD321E1221500109E40 /* alert-sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "alert-sound.caf"; sourceTree = "<group>"; };
 		6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverMonitor.swift; sourceTree = "<group>"; };
 		6BEDDAF421E26C720097CE3D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6BEDDAFA21E309DA0097CE3D /* TimeGoPublic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeGoPublic.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				6BBE3BC821E0577700109E40 /* TimeGOViewController.xib */,
 				6B9D18DD220FF9D300BB72FB /* InfoPlist.strings */,
 				6B3B6C31221012B600500496 /* Localizable.strings */,
-				6BBE3BD321E1221500109E40 /* alert-sound.caf */,
 				6BBE3B9F21E04D5700109E40 /* Assets.xcassets */,
 				6BBE3BA521E04D5700109E40 /* timeGO.entitlements */,
 			);
@@ -291,7 +288,6 @@
 			files = (
 				6BBE3BA021E04D5700109E40 /* Assets.xcassets in Resources */,
 				6B9D18DB220FF9D300BB72FB /* InfoPlist.strings in Resources */,
-				6BBE3BD421E1221500109E40 /* alert-sound.caf in Resources */,
 				6B3B6C2F221012B600500496 /* Localizable.strings in Resources */,
 				6BBE3BA321E04D5700109E40 /* MainMenu.xib in Resources */,
 				6BBE3BCA21E0577700109E40 /* TimeGOViewController.xib in Resources */,
@@ -488,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -544,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -567,7 +563,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -589,7 +585,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

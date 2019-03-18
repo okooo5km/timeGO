@@ -6,7 +6,7 @@
 //  Copyright © 2019 5km. All rights reserved.
 //
 import Cocoa
-import AVFoundation
+import UserNotifications
 
 class TimeGOViewController: NSViewController {
     
@@ -171,18 +171,27 @@ class TimeGOViewController: NSViewController {
     }
     
     func notificationFly() {
-        let userNotification = NSUserNotification()
-        userNotification.contentImage = NSImage(named: "AppIcon")
-        userNotification.title = NSLocalizedString("notification-title", comment: "通知的标题：时光流逝")
-        userNotification.subtitle = timerNow["time"]! + NSLocalizedString("minutes-name", comment: "")
-        userNotification.informativeText = timerNow["tip"]!
-        let userNotificationCenter = NSUserNotificationCenter.default
-        userNotificationCenter.delegate = self as? NSUserNotificationCenterDelegate
-        userNotificationCenter.scheduleNotification(userNotification)
-        let soundURL = Bundle.main.url(forResource: "alert-sound", withExtension: "caf")
-        var soundID: SystemSoundID = 0
-        AudioServicesCreateSystemSoundID(soundURL! as CFURL, &soundID)
-        AudioServicesPlaySystemSound(soundID)
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.delegate = self
+        
+        let content = UNMutableNotificationContent()
+        content.body = timerNow["tip"]!
+        content.sound = UNNotificationSound.default
+        var prefixTitle = timerNow["tag"]!
+        if timerNow["tag"] != "" { prefixTitle += " ･ " }
+        let timeTitle = timerNow["time"]!
+        let subfixTitle = NSLocalizedString("minutes-name", comment: "")
+        content.title = prefixTitle + timeTitle + subfixTitle
+        
+        let request = UNNotificationRequest(identifier: "TIME_GO_TIME_OUT_REQUEST",
+                                            content: content,
+                                            trigger: nil)
+        notificationCenter.add(request) { error in
+            if error != nil {
+                // :TODO add error log
+            }
+        }
+        
         if UserDefaults.standard.bool(forKey: UserDataKeys.voice) {
             notificationSpeak(text: timerNow["tip"]!, withVoice: getNotificationVoice(lang: currentLanguage))
         }
@@ -224,5 +233,17 @@ extension TimeGOViewController: NSPopoverDelegate {
             UserDefaults.standard.set(timeArray, forKey: UserDataKeys.time)
             arrayChanged = false
         }
+    }
+}
+
+extension TimeGOViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
     }
 }
