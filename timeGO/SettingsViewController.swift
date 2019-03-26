@@ -34,7 +34,7 @@ class SettingsViewController: NSViewController {
         }
         let lans = ["system", "zh-Hans", "zh-Hant", "en", "ja", "ko"]
         let lan = UserDefaults.standard.object(forKey: UserDataKeys.currentLanguage) as! String
-        languageSelector.selectItem(at: lans.index(of: lan)!)
+        languageSelector.selectItem(at: lans.firstIndex(of: lan)!)
     }
     
     override func viewDidAppear() {
