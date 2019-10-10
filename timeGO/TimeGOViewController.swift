@@ -174,6 +174,17 @@ class TimeGOViewController: NSViewController {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self
         
+        notificationCenter.getNotificationSettings { (settings) in
+            // Do not schedule notifications if not authorized.
+            guard settings.authorizationStatus == .authorized else {
+                notificationCenter.requestAuthorization(options: [.alert, .sound])
+                { (granted, error) in
+                   // Enable or disable features based on authorization.
+                }
+                return
+            }
+        }
+        
         let content = UNMutableNotificationContent()
         content.body = timerNow["tip"]!
         content.sound = UNNotificationSound.default
@@ -188,7 +199,7 @@ class TimeGOViewController: NSViewController {
                                             trigger: nil)
         notificationCenter.add(request) { error in
             if error != nil {
-                // :TODO add error log
+                print(error.debugDescription)
             }
         }
         
