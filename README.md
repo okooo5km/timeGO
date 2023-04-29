@@ -22,16 +22,22 @@ brew install bartycrouch
 
 ### 图标截图
 
-<img src="https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190108030519.png" width="128px">
+<img src="https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/uPic/icon_256x256@2x-20230429-170945.png" width="128px">
 
 ### 使用截图
 
 - 浅色模式(Aqua Mode)
 
-    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190213182802.jpg)
-
-    
+  ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190213182802.jpg)
 
 - 深色模式(Dark Aqua Mode)
 
-    ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190213182843.jpg)
+  ![](https://pichome-1254392422.cos.ap-chengdu.myqcloud.com/img/20190213182843.jpg)
+
+## 使用
+
+阅读[TimeGO 一款轻量简洁的计时提醒 app](https://blog.smslit.cn/2019/01/08/timeGO/)了解更多！
+
+## 支持我
+
+如果您觉得 App 还不错的话，可以到[十里](https://bento.me/5km)这里给我充电 🔋，感谢!
