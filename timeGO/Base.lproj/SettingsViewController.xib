@@ -158,28 +158,18 @@
                             <rect key="frame" x="0.0" y="25" width="408" height="5"/>
                         </box>
                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="197" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-p2-SBg">
-                            <rect key="frame" x="44" y="0.0" width="320" height="16"/>
+                            <rect key="frame" x="48" y="0.0" width="312" height="16"/>
                             <subviews>
                                 <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCn-rK-Fkh">
                                     <rect key="frame" x="0.0" y="0.0" width="70" height="16"/>
                                     <subviews>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Li-1w-lRy">
-                                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="16" id="CaF-eL-KMI"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="Npl-ci-Z5m"/>
-                                                <constraint firstAttribute="height" constant="16" id="XlM-Wh-HWT"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="hAE-GY-sbR"/>
-                                            </constraints>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="infoIcon" id="xbr-qp-GKw"/>
-                                        </imageView>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iWp-sw-K2c">
-                                            <rect key="frame" x="16" y="0.0" width="54" height="16"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="6QO-xo-Wid"/>
                                                 <constraint firstAttribute="height" constant="16" id="Gjx-Ld-Xmq"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="bevel" title="反馈信息" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="n4D-qR-hay">
+                                            <buttonCell key="cell" type="bevel" title="反馈信息" bezelStyle="rounded" image="infoIcon" imagePosition="left" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="n4D-qR-hay">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                                 <font key="font" metaFont="systemLight" size="12"/>
                                             </buttonCell>
@@ -188,38 +178,23 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="iWp-sw-K2c" firstAttribute="leading" secondItem="2Li-1w-lRy" secondAttribute="trailing" id="VvL-rj-5z4"/>
-                                    </constraints>
                                     <visibilityPriorities>
-                                        <integer value="1000"/>
                                         <integer value="1000"/>
                                     </visibilityPriorities>
                                     <customSpacing>
                                         <real value="3.4028234663852886e+38"/>
-                                        <real value="3.4028234663852886e+38"/>
                                     </customSpacing>
                                 </stackView>
                                 <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edF-Yz-8XJ">
-                                    <rect key="frame" x="267" y="0.0" width="53" height="16"/>
+                                    <rect key="frame" x="267" y="0.0" width="45" height="16"/>
                                     <subviews>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahl-GE-piM">
-                                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="BWv-lA-hSn"/>
-                                                <constraint firstAttribute="width" constant="16" id="gjw-vj-3nr"/>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="16" id="sIO-iv-yfT"/>
-                                                <constraint firstAttribute="height" constant="16" id="wwe-DG-4kk"/>
-                                            </constraints>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="aboutIcon" id="GNm-5J-lUh"/>
-                                        </imageView>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aXB-Jf-onu">
-                                            <rect key="frame" x="24" y="0.0" width="29" height="16"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="45" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="4Vb-qE-iOf"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="BSJ-He-4b3"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="bevel" title="关于" bezelStyle="rounded" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="oYm-vW-pfP">
+                                            <buttonCell key="cell" type="bevel" title="关于" bezelStyle="rounded" image="aboutIcon" imagePosition="left" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="oYm-vW-pfP">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                                 <font key="font" metaFont="cellTitle"/>
                                             </buttonCell>
@@ -228,15 +203,10 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="aXB-Jf-onu" firstAttribute="leading" secondItem="ahl-GE-piM" secondAttribute="trailing" constant="8" id="1lb-Ad-ZQc"/>
-                                    </constraints>
                                     <visibilityPriorities>
-                                        <integer value="1000"/>
                                         <integer value="1000"/>
                                     </visibilityPriorities>
                                     <customSpacing>
-                                        <real value="3.4028234663852886e+38"/>
                                         <real value="3.4028234663852886e+38"/>
                                     </customSpacing>
                                 </stackView>

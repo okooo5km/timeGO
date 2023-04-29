@@ -14,8 +14,6 @@ class SettingsViewController: NSViewController {
     @IBOutlet weak var timeTableView: NSTableView!
     @IBOutlet weak var voiceCheckButton: NSButton!
     @IBOutlet weak var languageSelector: NSPopUpButton!
-    @IBOutlet weak var checkUpdateButton: NSButton!
-    @IBOutlet weak var updateCheckButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +37,10 @@ class SettingsViewController: NSViewController {
     }
     
     @IBAction func aboutApp(_ sender: Any) {
-        tipInfo(withTitle: NSLocalizedString("about-title", comment: ""), withMessage: "\(getAppInfo()) \(NSLocalizedString("about-content", comment: ""))")
+//        tipInfo(withTitle: NSLocalizedString("about-title", comment: ""), withMessage: "\(getAppInfo()) \(NSLocalizedString("about-content", comment: ""))")
+        if let url = URL(string: "https://blog.smslit.cn/2019/01/08/timeGO/") {
+            NSWorkspace.shared.open(url)
+        }
     }
     
     @IBAction func feedbackApp(_ sender: Any) {
