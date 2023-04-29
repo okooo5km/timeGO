@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6B39F0C42210034E00FCBF57 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B39F0C62210034E00FCBF57 /* SettingsViewController.xib */; };
 		6B3B6C2F221012B600500496 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B3B6C31221012B600500496 /* Localizable.strings */; };
 		6B7AAEC021F0D3210033E0C5 /* TimerQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */; };
-		6B911C36222A2E5D001FFB77 /* TimeGoUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B911C35222A2E5D001FFB77 /* TimeGoUpdater.swift */; };
 		6B9D18DB220FF9D300BB72FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D18DD220FF9D300BB72FB /* InfoPlist.strings */; };
 		6BBE3B9E21E04D5500109E40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3B9D21E04D5500109E40 /* AppDelegate.swift */; };
 		6BBE3BA021E04D5700109E40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3B9F21E04D5700109E40 /* Assets.xcassets */; };
@@ -55,7 +54,6 @@
 		6B3B6C402213E4CD00500496 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
 		6B3B6C412213E4D000500496 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
 		6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerQueue.swift; sourceTree = "<group>"; };
-		6B911C35222A2E5D001FFB77 /* TimeGoUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeGoUpdater.swift; sourceTree = "<group>"; };
 		6B9D18D4220FF98800BB72FB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		6B9D18D5220FF99100BB72FB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		6B9D18D7220FF9AC00BB72FB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 				6BBE3BA421E04D5700109E40 /* Info.plist */,
 				6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */,
 				6BEDDAFA21E309DA0097CE3D /* TimeGoPublic.swift */,
-				6B911C35222A2E5D001FFB77 /* TimeGoUpdater.swift */,
 				6BBE3BD721E125A300109E40 /* PopoverMonitor.swift */,
 				6BBE3B9D21E04D5500109E40 /* AppDelegate.swift */,
 				6BBE3BA121E04D5700109E40 /* MainMenu.xib */,
@@ -232,11 +229,12 @@
 		6BBE3B9221E04D5500109E40 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				KnownAssetTags = (
 					timeSelector,
 				);
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = 5km;
 				TargetAttributes = {
 					6BBE3B9921E04D5500109E40 = {
@@ -343,7 +341,6 @@
 				6BEDDAFB21E309DA0097CE3D /* TimeGoPublic.swift in Sources */,
 				6BBE3B9E21E04D5500109E40 /* AppDelegate.swift in Sources */,
 				6B7AAEC021F0D3210033E0C5 /* TimerQueue.swift in Sources */,
-				6B911C36222A2E5D001FFB77 /* TimeGoUpdater.swift in Sources */,
 				6BBE3BD821E125A300109E40 /* PopoverMonitor.swift in Sources */,
 				6BBE3BC921E0577700109E40 /* TimeGOViewController.swift in Sources */,
 				6BEDDAF621E26C720097CE3D /* SettingsViewController.swift in Sources */,
@@ -462,6 +459,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -470,6 +468,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -524,6 +523,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -532,6 +532,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -561,6 +562,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SS9NT29VA7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = timeGO/Info.plist;
@@ -568,7 +570,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -586,6 +588,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SS9NT29VA7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = timeGO/Info.plist;
@@ -593,7 +596,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -609,12 +612,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = timeGOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -629,12 +634,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = timeGOTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGOTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -648,12 +655,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = timeGOUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGOUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -667,12 +676,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				INFOPLIST_FILE = timeGOUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGOUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

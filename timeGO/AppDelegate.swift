@@ -69,11 +69,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         currentLanguage = languages[0]
         Bundle.main.onLanguage()
         
-        // 启动时检查更新
-        if UserDefaults.standard.bool(forKey: UserDataKeys.checkUpdate) {
-            TimeGoUpdater.share.check {}
-        }
-        
         if let button = statusItem.button {
             button.image = NSImage(named: "statusIcon")
             button.action = #selector(togglePopoverView)

@@ -116,23 +116,6 @@ class SettingsViewController: NSViewController {
             NSApplication.shared.terminate(true)
         }
     }
-    
-    @IBAction func checkUpdateManually(_ sender: Any) {
-        checkUpdateButton.title = NSLocalizedString("check-update-button-checking.title", comment: "")
-        checkUpdateButton.isEnabled = false
-        TimeGoUpdater.share.check() {
-            self.checkUpdateButton.isEnabled = true
-            self.checkUpdateButton.title = NSLocalizedString("check-update-button-normal.title", comment: "")
-        }
-    }
-    
-    @IBAction func checkUpdateWhenLaunchOrNot(_ sender: NSButton) {
-        var enable = false
-        if sender.state == NSButton.StateValue.on {
-            enable = true
-        }
-        UserDefaults.standard.setValue(enable, forKey: UserDataKeys.checkUpdate)
-    }
 }
 
 extension SettingsViewController: NSTableViewDataSource {
