@@ -28,10 +28,6 @@ class SettingsViewController: NSViewController {
         if UserDefaults.standard.bool(forKey: UserDataKeys.voice) {
             voiceCheckButton.state = NSButton.StateValue.on
         }
-        updateCheckButton.state = NSButton.StateValue.off
-        if UserDefaults.standard.bool(forKey: UserDataKeys.checkUpdate) {
-            updateCheckButton.state = NSButton.StateValue.on
-        }
         let lans = ["system", "zh-Hans", "zh-Hant", "en", "ja", "ko"]
         let lan = UserDefaults.standard.object(forKey: UserDataKeys.currentLanguage) as! String
         languageSelector.selectItem(at: lans.firstIndex(of: lan)!)
