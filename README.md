@@ -40,4 +40,7 @@ brew install bartycrouch
 
 ## 支持我
 
-如果您觉得 App 还不错的话，可以到[十里](https://bento.me/5km)这里给我充电 🔋，感谢!
+如果您觉得 App 还不错的话:
+
+- App Store 上支持我：[时光]()
+- 欢迎到[十里](https://bento.me/5km)页面给我充电 🔋，感谢!

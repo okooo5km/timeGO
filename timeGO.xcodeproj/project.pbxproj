@@ -10,6 +10,7 @@
 		6B39F0C42210034E00FCBF57 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B39F0C62210034E00FCBF57 /* SettingsViewController.xib */; };
 		6B3B6C2F221012B600500496 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B3B6C31221012B600500496 /* Localizable.strings */; };
 		6B7AAEC021F0D3210033E0C5 /* TimerQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */; };
+		6B9BEAA129FF581200979791 /* CustomHoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9BEAA029FF581200979791 /* CustomHoverButton.swift */; };
 		6B9D18DB220FF9D300BB72FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B9D18DD220FF9D300BB72FB /* InfoPlist.strings */; };
 		6BBE3B9E21E04D5500109E40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBE3B9D21E04D5500109E40 /* AppDelegate.swift */; };
 		6BBE3BA021E04D5700109E40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BBE3B9F21E04D5700109E40 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		6B3B6C402213E4CD00500496 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
 		6B3B6C412213E4D000500496 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/SettingsViewController.strings; sourceTree = "<group>"; };
 		6B7AAEBF21F0D3210033E0C5 /* TimerQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerQueue.swift; sourceTree = "<group>"; };
+		6B9BEAA029FF581200979791 /* CustomHoverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHoverButton.swift; sourceTree = "<group>"; };
 		6B9D18D4220FF98800BB72FB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		6B9D18D5220FF99100BB72FB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		6B9D18D7220FF9AC00BB72FB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				6B3B6C31221012B600500496 /* Localizable.strings */,
 				6BBE3B9F21E04D5700109E40 /* Assets.xcassets */,
 				6BBE3BA521E04D5700109E40 /* timeGO.entitlements */,
+				6B9BEAA029FF581200979791 /* CustomHoverButton.swift */,
 			);
 			path = timeGO;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BEDDAFB21E309DA0097CE3D /* TimeGoPublic.swift in Sources */,
+				6B9BEAA129FF581200979791 /* CustomHoverButton.swift in Sources */,
 				6BBE3B9E21E04D5500109E40 /* AppDelegate.swift in Sources */,
 				6B7AAEC021F0D3210033E0C5 /* TimerQueue.swift in Sources */,
 				6BBE3BD821E125A300109E40 /* PopoverMonitor.swift in Sources */,
@@ -561,7 +565,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SS9NT29VA7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -572,7 +576,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGO;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.smslit.timeGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -587,7 +591,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = SS9NT29VA7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -598,7 +602,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = top.smslit.timeGO;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.smslit.timeGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

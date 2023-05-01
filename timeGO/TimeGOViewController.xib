@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,10 +35,10 @@
                         <action selector="toggleSettingsView:" target="-2" id="nOX-d3-blu"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-1h-GxE">
-                    <rect key="frame" x="20" y="64" width="16" height="16"/>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uRr-1h-GxE" customClass="CustomHoverButton" customModule="timeGO" customModuleProvider="target">
+                    <rect key="frame" x="21" y="64" width="16" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="quitIcon" imagePosition="overlaps" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="PyE-Do-1HK">
+                    <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="CloseIconInactive" imagePosition="overlaps" alignment="center" alternateImage="CloseIcon" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="PyE-Do-1HK">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -109,8 +108,9 @@
         </popover>
     </objects>
     <resources>
+        <image name="CloseIcon" width="16" height="16"/>
+        <image name="CloseIconInactive" width="16" height="16"/>
         <image name="pauseIcon" width="32" height="32"/>
-        <image name="quitIcon" width="32" height="32"/>
         <image name="settingsIcon" width="32" height="32"/>
         <image name="startIcon" width="32" height="32"/>
         <image name="stopIcon" width="32" height="32"/>
