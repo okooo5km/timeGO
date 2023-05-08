@@ -42,5 +42,5 @@ brew install bartycrouch
 
 如果您觉得 App 还不错的话:
 
-- App Store 上支持我：[时光]()
+- App Store 上支持我：[时光](https://apps.apple.com/cn/app/timego/id6448658165?mt=12)
 - 欢迎到[十里](https://bento.me/5km)页面给我充电 🔋，感谢!
